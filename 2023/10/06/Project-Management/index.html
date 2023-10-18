@@ -160,7 +160,12 @@
 <h2 id="02-Website-Creation-Template-Selection"><a href="#02-Website-Creation-Template-Selection" class="headerlink" title="02 Website Creation &amp; Template Selection"></a>02 Website Creation &amp; Template Selection</h2><h3 id="Website-Creation"><a href="#Website-Creation" class="headerlink" title="Website Creation"></a>Website Creation</h3><p>Create a folder for Hexo and create a web project here.<br><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-7.png" title="Create a Web Project"><br>Generate and preview local hexo pages.<br><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-8.png" title="Preview the Pages"><br><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-9.png" title="Initial Page"></p>
 <br>
 
-<h3 id="Template-Selection"><a href="#Template-Selection" class="headerlink" title="Template Selection"></a>Template Selection</h3><p>There are many beautiful web templates on the Hexo website, so we can pick the right web template to modify and use while watching.<br><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-10.png" title="Templates on Hexo"><br>We picked a few suitable templates from them, tested and debugged them, and finalized the style of our web page.<br><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-11.png" title="Choose the Template"><br>Install the template in the hexo project theme folder and complete the theme configuration.<br><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-12.png" title="Clone the Template"><br><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-13.png" title="Change the Theme"></p>
+<h3 id="Template-Selection"><a href="#Template-Selection" class="headerlink" title="Template Selection"></a>Template Selection</h3><p>There are many beautiful web templates on the Hexo website, so we can pick the right web template to modify and use while watching.<br><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-10.png" title="Templates on Hexo"><br>We picked a few suitable templates from them, tested and debugged them, and finalized the style of our web page.<br>The link to the template we chose is as follows:<br><a target="_blank" rel="noopener" href="https://github.com/zoeingwingkei/frame">https://github.com/zoeingwingkei/frame</a></p>
+<p><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-11.png" title="Choose the Template"><br>Install the template in the hexo project theme folder and complete the theme configuration.<br>Clone the template using the following code:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># go to your hexo theme folder</span></span><br><span class="line"><span class="built_in">cd</span> themes</span><br><span class="line"></span><br><span class="line"><span class="comment"># clone the project</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/zoeingwingkei/frame.git</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-12.png" title="Clone the Template"></p>
+<p>Change the theme of the template to ‘Frame’ in the config.yml file, so that we can change into the new template.<br><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-13.png" title="Change the Theme"></p>
 <br>
 
 <hr>
@@ -168,7 +173,81 @@
 <br>
 
 <hr>
-<h2 id="04-Upload-to-Github"><a href="#04-Upload-to-Github" class="headerlink" title="04 Upload to Github"></a>04 Upload to Github</h2><h3 id="GithubSSH-Configuration"><a href="#GithubSSH-Configuration" class="headerlink" title="GithubSSH Configuration"></a>GithubSSH Configuration</h3><p>Open git and enter the following command to get ssh-rsa.</p>
+<h2 id="04-Write-Our-First-Document"><a href="#04-Write-Our-First-Document" class="headerlink" title="04 Write Our First Document"></a>04 Write Our First Document</h2><p>Create a new blog by entering the following command.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new post <span class="string">&quot;Project Management&quot;</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-22.png"></p>
+<p>Modify the front-matter of the document, add Documents to the gallery and add covers to the document, so that in the “Project” page we can see the document and its cover.<br><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-23.png"><br><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-24.png"></p>
+<p>Use markdown language to write the content of the body, which part of the markdown language writing method is as follows:</p>
+<blockquote>
+<p><strong>Head Line</strong></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># H1</span></span><br><span class="line"><span class="comment">## H2</span></span><br><span class="line">...</span><br><span class="line"><span class="comment">###### Up to H6</span></span><br></pre></td></tr></table></figure>
+<p>The effect is as follows:</p>
+<h1 id="H1"><a href="#H1" class="headerlink" title="H1"></a>H1</h1><h2 id="H2"><a href="#H2" class="headerlink" title="H2"></a>H2</h2><h3 id="H3"><a href="#H3" class="headerlink" title="H3"></a>H3</h3><h4 id="H4"><a href="#H4" class="headerlink" title="H4"></a>H4</h4><h5 id="H5"><a href="#H5" class="headerlink" title="H5"></a>H5</h5><h6 id="H6"><a href="#H6" class="headerlink" title="H6"></a>H6</h6><br>
+
+<blockquote>
+<p><strong>Bold</strong></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> **word**</span><br><span class="line">Or <span class="keyword">select</span> the word you want to bold and use the shortcut key crtl + B</span><br></pre></td></tr></table></figure>
+<p>The effect is as follows:<br><strong>Bold</strong></p>
+<br>
+
+<blockquote>
+<p><strong>Lean</strong></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> *word*</span><br><span class="line">Or <span class="keyword">select</span> the word you want to tilt and use the shortcut key crtl + I</span><br></pre></td></tr></table></figure>
+<p>The effect is as follows:<br> <em>word</em></p>
+ <br>
+
+<blockquote>
+<p><strong>Underscores</strong></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;u&gt;word&lt;/u&gt;</span><br></pre></td></tr></table></figure>
+<p>The effect is as follows:<br><u>word</u></p>
+<br>
+
+<blockquote>
+<p><strong>Dividing line</strong></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>The effect is as follows:</p>
+<hr>
+<br>
+
+<blockquote>
+<p><strong>Point</strong></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- Disorganized sub-point I</span><br><span class="line">  * Disorderly subordination point I</span><br><span class="line">* Disorganized sub-point II</span><br></pre></td></tr></table></figure>
+<p>The effect is as follows:</p>
+<ul>
+<li>Disorganized sub-point I<ul>
+<li>Disorderly subordination point I</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Disorganized sub-point II</li>
+</ul>
+<br>
+
+<blockquote>
+<p><strong>Code Block</strong></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">``` bash</span><br><span class="line">$ hexo new post <span class="string">&quot;Project Management&quot;</span></span><br></pre></td></tr></table></figure>
+<p>The effect is as follows:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new post <span class="string">&quot;Project Management&quot;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<blockquote>
+<p><strong>Picture</strong></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](/pj1/pj1-25.png)</span><br></pre></td></tr></table></figure>
+<p>The effect is as follows:<br><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-25.png"></p>
+<br>
+
+<hr>
+<h2 id="05-Upload-to-Github"><a href="#05-Upload-to-Github" class="headerlink" title="05 Upload to Github"></a>05 Upload to Github</h2><h3 id="GithubSSH-Configuration"><a href="#GithubSSH-Configuration" class="headerlink" title="GithubSSH Configuration"></a>GithubSSH Configuration</h3><p>Open git and enter the following command to get ssh-rsa.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">&quot;penny1106@163.com&quot;</span></span><br></pre></td></tr></table></figure>
 <p><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-16.png" title="Get SSH"></p>
 <p>Finish ssh configuration in Github.<br><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-17.png" title="Finish SSH"></p>
