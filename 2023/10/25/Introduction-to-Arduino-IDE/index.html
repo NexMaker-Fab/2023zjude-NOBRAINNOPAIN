@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Lau">
+
+
+
+
+
+
+
+<title>Introduction to Arduino IDE | Hexo</title>
+
+
+
+    <link rel="icon" href="/2023zjude-NOBRAINNOPAIN/favicon.ico">
+
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Roboto+Mono&display=swap');
+</style>
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/2023zjude-NOBRAINNOPAIN/css/style.css">
+    
+
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/2023zjude-NOBRAINNOPAIN/js/frame.js"></script>
+    
+
+
+
+
+
+
+
+
+
+
+  <meta name="generator" content="Hexo 6.3.0"></head>
+  <body>
+    <div class="mask-border">
+    </div>
+
+    <div class="wrapper">
+
+      <div class="header">
+  <div class="flex-container">
+    <div class="header-inner">
+      <div class="site-brand-container">
+        <a href="/2023zjude-NOBRAINNOPAIN/">
+          
+            NO BRAIN NO PAIN.
+          
+        </a>
+      </div>
+      <div id="menu-btn" class="menu-btn" onclick="toggleMenu()">
+        Menu
+      </div>
+      <nav class="site-nav">
+        <ul class="menu-list">
+          
+            
+              <li class="menu-item">
+                <a href="/2023zjude-NOBRAINNOPAIN/">Home</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/2023zjude-NOBRAINNOPAIN/categories/gallery/">Projects</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/2023zjude-NOBRAINNOPAIN/Final-Project/">Final Project</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/2023zjude-NOBRAINNOPAIN/About-Us/">About Us</a>
+              </li> 
+                   
+          
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main">
+        <div class="flex-container">
+          <article id="post">
+
+  
+    <div class="post-head">
+    <div class="post-info">
+        <div class="tag-list">
+            
+        </div>
+        <div class="post-title">
+            
+            
+                Introduction to Arduino IDE
+            
+            
+        </div>
+        <span class="post-date">
+            Oct 25, 2023
+        </span>
+    </div>
+    <div class="post-img">
+        
+            <div class="h-line-primary"></div>
+              
+    </div>
+</div>
+    <div class="post-content">
+    <h2 id="Article-Catalog"><a href="#Article-Catalog" class="headerlink" title="Article Catalog"></a>Article Catalog</h2><ul>
+<li>Download and Installation</li>
+<li>Interface Functions</li>
+<li>Programming Language</li>
+<li>Hardware Connection</li>
+</ul>
+<br>
+
+<hr>
+<h1 id="01-Download-and-Installation"><a href="#01-Download-and-Installation" class="headerlink" title="01 Download and Installation"></a>01 Download and Installation</h1><h2 id="Arduino-IDE-Download"><a href="#Arduino-IDE-Download" class="headerlink" title="Arduino IDE Download"></a>Arduino IDE Download</h2><p>Find and download the Arduino IDE from the official Arduino website.<br>The download link of Arduino IDE official website is given below:<br><a target="_blank" rel="noopener" href="https://www.arduino.cc/en/software">https://www.arduino.cc/en/software</a></p>
+<p><img src="/2023zjude-NOBRAINNOPAIN/pj3/ide1.png"><br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ide2.png"></p>
+<h2 id="Installing-the-Arduino-IDE"><a href="#Installing-the-Arduino-IDE" class="headerlink" title="Installing the Arduino IDE"></a>Installing the Arduino IDE</h2><p>Find the double-click installation file you just downloaded on your computer to start the installation.<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ide3.png"></p>
+<p>Follow the prompts to install, and the following screen will appear to indicate that the installation is complete.<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ide4.png"></p>
+<br>
+
+<hr>
+<h1 id="02-Interface-Functions"><a href="#02-Interface-Functions" class="headerlink" title="02 Interface Functions"></a>02 Interface Functions</h1><h2 id="Interface-Layout"><a href="#Interface-Layout" class="headerlink" title="Interface Layout"></a>Interface Layout</h2><p>The Arduino IDE interface for Windows is shown below, and will be slightly different for MacOSX or Linux.<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ide5.png"></p>
+<p>The Arduino IDE interface is divided into three sections, with the toolbar at the top, the code editing area in the middle, and the message notification area at the bottom. Below the toolbar is the tab to open the program, with the program’s filename on the tab.</p>
+<p>The first time you use the IDE, you can change the language of the IDE’s display by selecting the appropriate language in the Editer language option of the Preferences under the File menu, and restarting the IDE software.<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ide6.png"><br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ide7.png"></p>
+<p>The following table lists the top toolbar buttons and their functions.</p>
+<table>
+<thead>
+<tr>
+<th align="center">ICON</th>
+<th align="center">NAME</th>
+<th align="center">FONCTION</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><img src="/2023zjude-NOBRAINNOPAIN/pj3/image18.png"></td>
+<td align="center">Verify</td>
+<td align="center">Check the code for errors</td>
+</tr>
+<tr>
+<td align="center"><img src="/2023zjude-NOBRAINNOPAIN/pj3/image19.png"></td>
+<td align="center">Upload</td>
+<td align="center">Upload the current code to the Arduino controller</td>
+</tr>
+<tr>
+<td align="center"><img src="/2023zjude-NOBRAINNOPAIN/pj3/image20.png"></td>
+<td align="center">Debug</td>
+<td align="center">Monitor variable values and the program execution flow</td>
+</tr>
+<tr>
+<td align="center"><img src="/2023zjude-NOBRAINNOPAIN/pj3/image21.png"></td>
+<td align="center">Board Selection</td>
+<td align="center">Select the currently connected or about to be connected development board and interface</td>
+</tr>
+<tr>
+<td align="center"><img src="/2023zjude-NOBRAINNOPAIN/pj3/image22.png"></td>
+<td align="center">Serial Plotter</td>
+<td align="center">Obtain values from the preset serial port and plot them on an xy-axis graph</td>
+</tr>
+<tr>
+<td align="center"><img src="/2023zjude-NOBRAINNOPAIN/pj3/image23.png"></td>
+<td align="center">Serial Monitor</td>
+<td align="center">View information received from the serial port, and send messages to the connected device</td>
+</tr>
+</tbody></table>
+<p>The following table lists the left toolbar buttons and their functions.</p>
+<table>
+<thead>
+<tr>
+<th align="center">ICON</th>
+<th align="center">NAME</th>
+<th align="center">FONCTION</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><img src="/2023zjude-NOBRAINNOPAIN/pj3/image24.png"></td>
+<td align="center">Project Folder</td>
+<td align="center">View local or cloud-based projects</td>
+</tr>
+<tr>
+<td align="center"><img src="/2023zjude-NOBRAINNOPAIN/pj3/image25.png"></td>
+<td align="center">Board Manager</td>
+<td align="center">View and install board drivers</td>
+</tr>
+<tr>
+<td align="center"><img src="/2023zjude-NOBRAINNOPAIN/pj3/image26.png"></td>
+<td align="center">Library Manager</td>
+<td align="center">View and install specific modules, functions, and constants</td>
+</tr>
+<tr>
+<td align="center"><img src="/2023zjude-NOBRAINNOPAIN/pj3/image27.png"></td>
+<td align="center">Debug</td>
+<td align="center">Monitor variable values and the program execution flow</td>
+</tr>
+<tr>
+<td align="center"><img src="/2023zjude-NOBRAINNOPAIN/pj3/image28.png"></td>
+<td align="center">Search</td>
+<td align="center">Search for files or features</td>
+</tr>
+</tbody></table>
+<h2 id="Board-and-Port-Selection"><a href="#Board-and-Port-Selection" class="headerlink" title="Board and Port Selection"></a>Board and Port Selection</h2><p>There are two ways to select the development board and port.</p>
+<p><strong>Method I:</strong><br>Manually select the development board in Tools - Development Board.<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ide8.png"><br>Manually select the serial port in Tools-Ports.<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ide9.png"></p>
+<p><strong>Method II:</strong><br>Select Development Board in the top ribbon.<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ide10.png"></p>
+<br>
+
+<hr>
+<h1 id="03-Programming-Language"><a href="#03-Programming-Language" class="headerlink" title="03 Programming Language"></a>03 Programming Language</h1><p>Arduino’s programming language is based on C&#x2F;C++, which makes the statements in the program easier to understand through the encapsulated API, and it is possible to intuitively control the Arduino without paying attention to the complicated register configurations in the microcontroller, which enhances the readability of the program and improves the efficiency of development at the same time.</p>
+<p>The basic structure of the Arduino program consists of two functions: setup() and loop().</p>
+<p><strong>setup()</strong><br>After the Arduino controller is powered on or reset, it will start executing the program in the setup() function, and this part will only be executed once. Usually the setup() function completes the initialization of Arduino, such as configuring the I&#x2F;O port status, initializing the serial port and other operations.</p>
+<p><strong>loop()</strong><br>After the program in the setup() function is executed, the Arduino will then execute the program in the loop() function, which is a dead loop where the program will run repeatedly. Usually in the loop() function to complete the main functions of the program, such as driving various modules, collecting data and so on.</p>
+<p>Arduino IDE is the official programming environment, write code, upload to arduino. support windows, linux, mac.</p>
+<p>In addition, there are some graphical programming environments, such as Mixly, which is programmed by dragging and dropping blocks, and the interface is more friendly to beginners.<br>The URL for Mixly is as followed:<br><a target="_blank" rel="noopener" href="https://mixly.org/">https://mixly.org/</a></p>
+<h2 id="Sample-Program"><a href="#Sample-Program" class="headerlink" title="Sample Program"></a>Sample Program</h2><p>The Arduino IDE comes with a number of example programs that are good starting material. Blink in 01.Basics, for example, uses the on-board 13-pin LED that alternates between on and off.<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ide11.png"><br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ide12.png"></p>
+<h2 id="Compile-and-Upload"><a href="#Compile-and-Upload" class="headerlink" title="Compile and Upload"></a>Compile and Upload</h2><ol>
+<li><p>Compile the code: Project-&gt;Compile&#x2F;Verify, or the 1st button on the toolbar (✓).<br>Check if the code is correct by compiling, if there is any error modify the code according to the message at the bottom of the IDE. Only code that passes compilation can be uploaded to the arduino board.<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ide13.png"></p>
+</li>
+<li><p>Upload the program: Project-&gt;Upload, or the 2nd button on the toolbar (-&gt;).<br>Upload successfully, the bottom status bar will prompt and the code will start running on the arduino board.</p>
+</li>
+</ol>
+<br>
+
+<hr>
+<h1 id="04-Hardware-Connection"><a href="#04-Hardware-Connection" class="headerlink" title="04 Hardware Connection"></a>04 Hardware Connection</h1><p>The Arduino UNO is a microcontroller board based on the ATmega328P. It features 14 digital input&#x2F;output pins (6 of which can be used as PWM outputs), 6 analog inputs, a 16 MHz ceramic resonator, a USB connection, a power jack, an ICSP connector, and a reset button. It has everything you need to support your microcontroller; just connect it to your computer with a USB cable, power it with an AC-DC-DC adapter or a battery, and you’re ready to go. You can tinker with the UNO without worrying about doing something wrong; at worst, you can replace the chip for a few dollars and start over.</p>
+<p>Schematic:<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ide14.png"></p>
+<p>Specific hardware connection operations will be described later with different Arduino projects.</p>
+<br>
+
+<hr>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><em><a target="_blank" rel="noopener" href="https://dshboom.top/2023/03/25/arduino%E6%95%99%E7%A8%8B-(%E4%B8%80)%E5%AE%89%E8%A3%85arduino%20ide/">https://dshboom.top/2023/03/25/arduino%E6%95%99%E7%A8%8B-(%E4%B8%80)%E5%AE%89%E8%A3%85arduino%20ide/</a></em><br><em><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/617017855">https://zhuanlan.zhihu.com/p/617017855</a></em><br><em><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/360660265">https://zhuanlan.zhihu.com/p/360660265</a></em><br><em><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/361922292">https://zhuanlan.zhihu.com/p/361922292</a></em><br><em><a target="_blank" rel="noopener" href="https://blog.csdn.net/duping812/article/details/121423985">https://blog.csdn.net/duping812/article/details/121423985</a></em><br><em><a target="_blank" rel="noopener" href="https://blog.csdn.net/vor234/article/details/118755032">https://blog.csdn.net/vor234/article/details/118755032</a></em></p>
+<p><br><br><br></p>
+
+</div> 
+
+<script>
+    window.onload = detectors();
+</script>
+    <div class="post-footer">
+    <div class="h-line-primary"></div>
+    <nav class="post-nav">
+        <div class="prev-item">
+           
+                <div class="icon arrow-left"></div>
+                <div class="post-link">
+                    <a href="/2023zjude-NOBRAINNOPAIN/2023/10/25/Comparison-of-Arduino-and-Raspberry-Pi/">Prev</a>
+                </div>
+            
+        </div>
+        <div class="next-item">
+            
+                <div class="icon arrow-right"></div>
+                <div class="post-link">
+                  <a href="/2023zjude-NOBRAINNOPAIN/2023/10/25/Arduino/">Next</a>  
+                </div>  
+            
+        </div>
+    </nav>
+</div>
+
+    
+      <div class="post-comment">
+
+     
+
+     
+    
+    
+
+</div>
+     
+  
+</article>
+        </div>
+      </div>
+      
+      <div class="footer">
+    <div class="flex-container">
+        <div class="footer-text">
+            
+            
+                Pan Jiangyu, Dong Yan, Zhou Yang, Jin Duola, Hou Liang | 
+            
+            
+                Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/zoeingwingkei/frame/">Frame</a>
+                
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    
+    
+
+  </body>
+</html>

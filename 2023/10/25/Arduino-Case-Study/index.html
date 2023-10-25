@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Lau">
+
+
+
+
+
+
+
+<title>Arduino Case Study | Hexo</title>
+
+
+
+    <link rel="icon" href="/2023zjude-NOBRAINNOPAIN/favicon.ico">
+
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Roboto+Mono&display=swap');
+</style>
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/2023zjude-NOBRAINNOPAIN/css/style.css">
+    
+
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/2023zjude-NOBRAINNOPAIN/js/frame.js"></script>
+    
+
+
+
+
+
+
+
+
+
+
+  <meta name="generator" content="Hexo 6.3.0"></head>
+  <body>
+    <div class="mask-border">
+    </div>
+
+    <div class="wrapper">
+
+      <div class="header">
+  <div class="flex-container">
+    <div class="header-inner">
+      <div class="site-brand-container">
+        <a href="/2023zjude-NOBRAINNOPAIN/">
+          
+            NO BRAIN NO PAIN.
+          
+        </a>
+      </div>
+      <div id="menu-btn" class="menu-btn" onclick="toggleMenu()">
+        Menu
+      </div>
+      <nav class="site-nav">
+        <ul class="menu-list">
+          
+            
+              <li class="menu-item">
+                <a href="/2023zjude-NOBRAINNOPAIN/">Home</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/2023zjude-NOBRAINNOPAIN/categories/gallery/">Projects</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/2023zjude-NOBRAINNOPAIN/Final-Project/">Final Project</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/2023zjude-NOBRAINNOPAIN/About-Us/">About Us</a>
+              </li> 
+                   
+          
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main">
+        <div class="flex-container">
+          <article id="post">
+
+  
+    <div class="post-head">
+    <div class="post-info">
+        <div class="tag-list">
+            
+        </div>
+        <div class="post-title">
+            
+            
+                Arduino Case Study
+            
+            
+        </div>
+        <span class="post-date">
+            Oct 25, 2023
+        </span>
+    </div>
+    <div class="post-img">
+        
+            <div class="h-line-primary"></div>
+              
+    </div>
+</div>
+    <div class="post-content">
+    <h2 id="Article-Catalog"><a href="#Article-Catalog" class="headerlink" title="Article Catalog"></a>Article Catalog</h2><ul>
+<li>KaboomBox</li>
+<li>Animatronic Skull With Arduino</li>
+</ul>
+<br>
+
+<hr>
+<h1 id="KaboomBox"><a href="#KaboomBox" class="headerlink" title="KaboomBox"></a>KaboomBox</h1><h2 id="01-Name"><a href="#01-Name" class="headerlink" title="01 Name"></a>01 Name</h2><p>KaboomBox - an RFID 8-Track Player</p>
+<br>
+
+<h2 id="02-Case-Source"><a href="#02-Case-Source" class="headerlink" title="02 Case Source"></a>02 Case Source</h2><p><a target="_blank" rel="noopener" href="https://www.instructables.com/KaboomBox-an-RFID-8-Track-Player/">https://www.instructables.com/KaboomBox-an-RFID-8-Track-Player/</a></p>
+<br>
+
+<h2 id="03-Case-analysis"><a href="#03-Case-analysis" class="headerlink" title="03 Case analysis"></a>03 Case analysis</h2><p><img src="/2023zjude-NOBRAINNOPAIN/pj3/cs1-1.jpg"></p>
+<p>Vinyl records provide nice, warm analog sound. CDs have nearly lossless storage for high-quality music. Even cassette tapes have a certain nostalgic appeal and cool factor. But 8-track cartridges are almost useless, because they don’t offer any real benefits over the alternatives.</p>
+<p>8-track players, on the other hand, can be very special.</p>
+<p>The best of the bunch is the Panasonic RQ-830S 8-track player, often called the “dynamite” or “TNT” due to the enclosure and next-track switch looking like an old school plunger detonator for explosives.</p>
+<p>The blogger purchased a Panasonic RQ-830S, made in the ‘70s, that wasn’t functional. It was missing the battery cover and power supply, and wouldn’t turn on.</p>
+<p>Then I turned it into the most awesome RFID music player this side of the new millennium.</p>
+<p>An RFID music player is a fancy MP3 player that uses RFID (Radio Frequency Identification) tags instead of buttons to select music. In this case, there is an RFID sticker under the label of each 8-track cartridge. When the user inserts a cartridge, the device reads the RFID tag and triggers an associated folder of MP3 music on an SD card. That music then plays through a DFPlayer Mini MP3 player.</p>
+<h3 id="Supplies"><a href="#Supplies" class="headerlink" title="Supplies"></a>Supplies</h3><p>Raspberry Pi Pico<br>DFRobot DFPlayer Mini MP3 Player<br>HiLetgo 0.95” SSD1331 65K OLED<br>HiLetgo PN532 RFID Reader</p>
+<p><strong>Software:</strong><br>Autodesk Fusion 360；Arduino IDE；Adobe Illustrator or any image editor (for labels)</p>
+<p><strong>Tools:</strong><br>3D printer；Soldering iron</p>
+<h3 id="Step-1-The-Idea"><a href="#Step-1-The-Idea" class="headerlink" title="Step 1: The Idea"></a>Step 1: The Idea</h3><p><img src="/2023zjude-NOBRAINNOPAIN/pj3/cs1-2.jpg"><br><img src="/2023zjude-NOBRAINNOPAIN/pj3/cs1-3.jpg"></p>
+<p>The project, which the blogger’ve dubbed “KaboomBox”, works like most RFID music players. It reads an RFID tag and begins playing a folder of music linked to that specific tag.</p>
+<h3 id="Step-2-The-Hardware"><a href="#Step-2-The-Hardware" class="headerlink" title="Step 2: The Hardware"></a>Step 2: The Hardware</h3><p><img src="/2023zjude-NOBRAINNOPAIN/pj3/cs1-4.png"></p>
+<p>The “brain” is a Raspberry Pi Pico microcontroller development board.</p>
+<p>That looks for RFID tags using a HiLetgo PN532 RFID reader. When it sees a tag, it tells a DFRobot DFPlayer Mini MP3 player to start playing songs in the corresponding folder on the micro SD card. An extension makes that SD card accessible on the exterior of the device.</p>
+<p>The Pico also controls the LCD screen behind the window. At launch, it shows the Kaboom Box logo. Then it shows a waiting icon. When it detects an RFID tag, it display a music note icon with that playlist’s title in the middle. A circle of green dots around the outside indicate the volume level.</p>
+<p>A potentiometer attached to the volume knob tells the Pico the volume to set. The Pico then gives the command to the DFPlayer to set the volume.</p>
+<p>The plunger on top pushes down on the original mechanism, which has a really nice tactile feel. At the end of its travel, it hits the lever of a microswitch. The Pico registers that and tells the DFPlayer to move to the next song.</p>
+<p>Power comes from a battery pack with two 18650 lithium battery cells. That goes through a charging&#x2F;distribution board to the rest of the circuit via a lamp-style power switch mounted on the top of the device. A USB-C extension makes the charging port accessible from the outside.</p>
+<h3 id="Step-3-Custom-Parts"><a href="#Step-3-Custom-Parts" class="headerlink" title="Step 3: Custom Parts"></a>Step 3: Custom Parts</h3><p><img src="/2023zjude-NOBRAINNOPAIN/pj3/cs1-5.png"><br>This project required a handful of custom 3D-printed parts, which the blogger designed in Autodesk Fusion 360.</p>
+<p>These parts were the most difficult part of the project. It is always more of a challenge to design parts that fit existing devices when the entire device is your own creation. the blogger wish he had some secret approach to this, but he don’t. The blogger tried 3D scanning the enclosure, but couldn’t get good scans.<br>So he took the tried and true approach: measurements with digital calipers and trial-and-error through several iterations of the printed parts.</p>
+<p>The most obvious is the battery cover, which was necessary since the original was missing. He very carefully designed that to match the curves of the device. He then printed it on a Phrozen Sonic Mighty 8K resin 3D printer to get the best quality and strength. Finally he spray-painted it with a color chosen to match as closely as possible.</p>
+<p><strong>Other 3D-printed parts include:</strong><br>SD card port<br>USB-C port<br>Volume knob<br>LCD and RFID reader mount<br>Mount for the ElectroCookie prototyping PCB</p>
+<h3 id="Step-4-The-Code"><a href="#Step-4-The-Code" class="headerlink" title="Step 4: The Code"></a>Step 4: The Code</h3><p><img src="/2023zjude-NOBRAINNOPAIN/pj3/cs1-6.png"></p>
+<p>The blogger mentioned that all of the programming was performed within the Arduino IDE, which allowed him to take advantage of several handy libraries for the display, DFPlayer Mini, and RFID reader.</p>
+<p>The blogger’s code was very thoroughly commented, so anyone interested in understanding all of the details was advised to look at the comments. Most of the code was straightforward and similar to what one would see in any RFID music player project. However, there were some quirks with the display that he wanted to talk about.</p>
+<p>The display he used was a full-color OLED that he really liked, and he aimed to take advantage of its color capabilities. However, microcontrollers have limited memory and can struggle to display color images, as most high-resolution color displays handle their own storage and processing for that reason. He had to employ a few tricks to work around this limitation.</p>
+<p>For example, the boot logo was actually composed of three different monochrome images, each displayed one at a time, with each set to a different color.</p>
+<p>In a similar manner, the display shown when playing music was made up of various elements. The music note icon was a monochrome image, and the playlist name displayed over it was just text. He used the Adafruit GFX library to draw the green dots for volume control, and black dots were drawn over them to “erase” them when necessary. This method might not have been as memory-efficient as he would have liked, but it achieved the necessary visual effect.</p>
+<h3 id="Step-5-The-Tapes"><a href="#Step-5-The-Tapes" class="headerlink" title="Step 5: The Tapes"></a>Step 5: The Tapes</h3><p><img src="/2023zjude-NOBRAINNOPAIN/pj3/cs1-7.png"></p>
+<p>The most enjoyable part of the entire project, he found, was when he began with the purchase of a few old 8-track cartridges. He noted that these cartridges were very affordable and easily obtainable on eBay.</p>
+<p>A considerable amount of time was spent on determining the optimal placement for the RFID tags. He discovered that precise positioning was crucial for reliable tag reading.</p>
+<p>The final step involved creating his own labels, despite not being a professional graphic designer. This part of the project was enjoyable for him. He took care to ensure that the artwork files were created at the correct size to avoid any scaling issues.</p>
+<p>With the appropriately sized artwork files in hand, he visited a FedEx print office to have them printed onto sticker paper. The correctly sized labels were then easily peeled and applied to the tapes, covering the RFID tags.</p>
+<h3 id="Step-6-The-Music"><a href="#Step-6-The-Music" class="headerlink" title="Step 6: The Music"></a>Step 6: The Music</h3><p><img src="/2023zjude-NOBRAINNOPAIN/pj3/cs1-8.png"></p>
+<p>The DFPlayer Mini does impose specific rules regarding file limits and folder organization.</p>
+<p>In general, each folder is capable of accommodating up to a hundred songs, and you can create a hundred such folders. This effectively allows for a library of 10,000 songs, providing ample room for creating new tapes. The advantage of using an external SD card is that it allows for straightforward additions of new music.</p>
+<p>However, one limitation is the absence of a programmed function for adding new RFID tags. Consequently, to create additional tapes with new tag IDs, you need to establish a connection and reflash the Pico.</p>
+<h3 id="Step-7-Enjoy"><a href="#Step-7-Enjoy" class="headerlink" title="Step 7: Enjoy!"></a>Step 7: Enjoy!</h3><p><img src="/2023zjude-NOBRAINNOPAIN/pj3/cs1-9.png"></p>
+<br>
+
+<h2 id="04-Reproducibility"><a href="#04-Reproducibility" class="headerlink" title="04 Reproducibility"></a>04 Reproducibility</h2><h3 id="Complexity"><a href="#Complexity" class="headerlink" title="Complexity"></a>Complexity</h3><p>The project is relatively complex, involving multiple hardware components (such as RFID card reader, music player, OLED display, etc.) and programming knowledge. As beginners, we may need some additional time to understand and master how these components work and how to integrate them.</p>
+<h3 id="Resource-Requirements"><a href="#Resource-Requirements" class="headerlink" title="Resource Requirements"></a>Resource Requirements</h3><p>The project uses some specific hardware, such as the Raspberry Pi Pico and a particular model of the RFID card reader. We need to ensure that we can access these hardware components. Additionally, custom parts like 3D printing and designing labels may require additional equipment or services.</p>
+<h3 id="Programming"><a href="#Programming" class="headerlink" title="Programming"></a>Programming</h3><p>The project involves programming, and we need to be proficient in the Arduino programming language and the use of relevant libraries. Handling aspects like displays and audio might require additional learning.</p>
+<br>
+
+<h2 id="05-Evaluation-Value-Point"><a href="#05-Evaluation-Value-Point" class="headerlink" title="05 Evaluation (Value Point)"></a>05 Evaluation (Value Point)</h2><h3 id="Advantages-Value-Points"><a href="#Advantages-Value-Points" class="headerlink" title="Advantages (Value Points)"></a>Advantages (Value Points)</h3><p>Unique Vintage Design: The project preserves the captivating design of the original Panasonic 8-track player, adding a nostalgic and distinctive touch to the integration of modern technology into a retro device.</p>
+<p>Seamless Component Integration: The project impresses with its meticulous attention to detail in packaging and the seamless integration of electronic components. While the original hardware has been replaced, the project maintains an authentic appearance. Key components such as the LCD screen, plunger switch, volume knob, SD card slot, and USB-C charging ports seamlessly fit into their original locations, preserving the continuity of the original design.</p>
+<h3 id="Potential-Drawbacks"><a href="#Potential-Drawbacks" class="headerlink" title="Potential Drawbacks"></a>Potential Drawbacks</h3><p>Power Switch Location: The use of a “lamp-style” power switch mounted on the top of the device may not be the most ergonomic choice. It’s advisable to explore the integration of the power switch into the original volume control or seek a more natural location, such as the back of the device, to enhance the authenticity of the project and user experience.</p>
+<p>In summary, this project offers unique design and execution features but also presents opportunities for improvement to enhance the overall user experience and reproducibility.</p>
+<br>
+
+<h2 id="06-Application"><a href="#06-Application" class="headerlink" title="06 Application"></a>06 Application</h2><h3 id="Music-Exhibitions-and-Museums"><a href="#Music-Exhibitions-and-Museums" class="headerlink" title="Music Exhibitions and Museums"></a>Music Exhibitions and Museums</h3><p>Similar technology and design principles can be used in music exhibitions and museums to enhance visitor interaction. By embedding RFID tags into music exhibits or displays, visitors can easily access information about musicians, works, or historical events while enjoying music playback.</p>
+<h3 id="Tourism-and-City-Guided-Tours"><a href="#Tourism-and-City-Guided-Tours" class="headerlink" title="Tourism and City Guided Tours"></a>Tourism and City Guided Tours</h3><p>Embedded technology and RFID tags can be used to create interactive city guided tour systems. Tourists can swipe cards or scan tags to access information about historical landmarks, attractions, or museums, while enjoying audio tours.</p>
+<h3 id="Children’s-electronic-diary"><a href="#Children’s-electronic-diary" class="headerlink" title="Children’s electronic diary"></a>Children’s electronic diary</h3><p><strong>RFID Technology:</strong><br>Consider using RFID technology to implement different sections of the children’s diary, such as pages for different dates or themes. Embed an RFID tag on each page, and when a child swipes a card or turns to a specific page, the corresponding voice or story can automatically play.</p>
+<p><strong>Embedded Audio Player:</strong><br>Similar to the DFP layer Mini in the case, you can integrate a small embedded audio player to store and play the children’s voice recordings in the diary. This can be used to create sound pages where children can record their voices on different dates or themes.</p>
+<p><strong>Interactive Design:</strong><br>Borrow interactive design principles from the case to create a visually engaging children’s diary. For instance, when a child turns to a specific page, the screen can display images or animations related to that page’s content and play the corresponding voice recording. This can spark a child’s interest and provide more interactivity.</p>
+<br>
+
+<hr>
+<h1 id="Animatronic-Skull-With-Arduino"><a href="#Animatronic-Skull-With-Arduino" class="headerlink" title="Animatronic Skull With Arduino"></a>Animatronic Skull With Arduino</h1><p><img src="/2023zjude-NOBRAINNOPAIN/pj3/cs2-1.png"></p>
+<h2 id="01-Case-Source"><a href="#01-Case-Source" class="headerlink" title="01 Case Source"></a>01 Case Source</h2><p><a target="_blank" rel="noopener" href="https://www.instructables.com/Animatronic-Skull-With-Arduino/">https://www.instructables.com/Animatronic-Skull-With-Arduino/</a></p>
+<br>
+
+<h2 id="02-Case-review"><a href="#02-Case-review" class="headerlink" title="02 Case review"></a>02 Case review</h2><h3 id="Project-Overview："><a href="#Project-Overview：" class="headerlink" title="Project Overview："></a>Project Overview：</h3><p>This animatronic skull consists of two 5mm red LEDs for the eyes and three micro servo motors for eye and jaw movements, creating realistic expressions. But what makes this skull truly special is its ability to react to its environment. It is equipped with an ultrasonic sensor (HC-SR04) that detects the proximity of objects, allowing the skull to react differently when someone approaches or moves away. Eye and mouth animations vary in speed and intensity, providing an interactive and immersive experience for anyone nearby.</p>
+<h3 id="Necessary-materials"><a href="#Necessary-materials" class="headerlink" title="Necessary materials:"></a>Necessary materials:</h3><p>An ancient skull from National Geographic’s “The Human Body” collection<br>Arduino Uno or similar (I used the Uno and then put the chip in the Standalone&#x2F;Zatino)<br>Electrolytic capacitor 1000uF 16V<br>2x 5mm red LEDs<br>2x 330r resistors<br>3x SG90 9g micro servos<br>Ultrasonic Sensor HC-SR04<br>Flexible Wires&#x2F;Jumpers<br>Thin Heat Shrink Tubing<br>Quick Glue<br>hot glue<br>Seals (“mother-in-law’s tongue”)<br>Black Bidim Blanket<br>Rigid wire<br>Perforated Printed Circuit Board (PCB) to facilitate assembly of the skull’s internal circuit<br>Pliers, scissors, micro grinder (ideal)<br>Cellular Source 5V and at least 1A.</p>
+<h3 id="Step1-Eyes"><a href="#Step1-Eyes" class="headerlink" title="Step1:Eyes"></a>Step1:Eyes</h3><p><img src="/2023zjude-NOBRAINNOPAIN/pj3/cs2-2.png"></p>
+<p>1 - Make the holes for the eyes, using the micro-grinder.<br>NOTE: The size of the hole must be sufficient to fit the servo motor shaft so that it does not lock&#x2F;lock in the hole to prevent the motor from burning;<br>2 - Cut the “flap” of the servomotor to fit the skull (see photo);<br>3 - Glue the servomotor with hot glue;<br>4 - Cut the eye socket and discard;<br>5 - Cut the plastic “arm” of the servo motor to place the round part with quick glue on the top of the eye;<br>6 - Fit the eye onto the servo motor.</p>
+<h3 id="Step2-Testing-the-Angle-of-the-Eyes"><a href="#Step2-Testing-the-Angle-of-the-Eyes" class="headerlink" title="Step2:Testing the Angle of the Eyes"></a>Step2:Testing the Angle of the Eyes</h3><p><img src="/2023zjude-NOBRAINNOPAIN/pj3/cs2-3.png"><br><img src="/2023zjude-NOBRAINNOPAIN/pj3/cs2-4.png"></p>
+<p>Place your eyes in the right position, with the central axis being “looking straight ahead at 90º”;<br>Looking in and out: 50º or 130º</p>
+<h3 id="Step3-Hole-for-Passing-Wires"><a href="#Step3-Hole-for-Passing-Wires" class="headerlink" title="Step3:Hole for Passing Wires"></a>Step3:Hole for Passing Wires</h3><p><img src="/2023zjude-NOBRAINNOPAIN/pj3/cs2-5.png"></p>
+<p>Drill the hole in the skull to pass the rigid jaw wire through.</p>
+<h3 id="Step4-Jaw"><a href="#Step4-Jaw" class="headerlink" title="Step4:Jaw"></a>Step4:Jaw</h3><p><img src="/2023zjude-NOBRAINNOPAIN/pj3/cs2-6.png"></p>
+<p>1 - Cut the 2 locks on the Jaw;<br>2 - Make a hole on the side of the jaw to fit the rigid wire;<br>3 - Glue the jaw servo motor to the skull (see photo);<br>4 - Take a stiff wire and bend a small piece of the end, leaving it in an L shape, to fit into the hole in the jaw and the other end of the wire to pass through the hole made in step 2.<br>5 - The jaw servo motor also contains a piece of wire with the tip bent, to fit the wire coming from the jaw.<br>OBS: The angle of the jaw servo, I put it as follows:<br>mouth closed: 140º<br>semi-open mouth: 110º and 90º<br>mouth open: 70º</p>
+<h3 id="Step5-Connections"><a href="#Step5-Connections" class="headerlink" title="Step5:Connections"></a>Step5:Connections</h3><p><img src="/2023zjude-NOBRAINNOPAIN/pj3/cs2-7.png"></p>
+<p>1 - Make the connections as shown in the diagram;<br>2 - Make another hole at the bottom of the skull to pass the servo motor signal wires (orange wires) along with the live and neutral wires that go on the printed circuit board.<br>OBS: Use Arduino Uno or another one of your choice.</p>
+<h3 id="Step6-Ultrasonic-Sensor-HC-SR04-and-Final-Assembly"><a href="#Step6-Ultrasonic-Sensor-HC-SR04-and-Final-Assembly" class="headerlink" title="Step6:Ultrasonic Sensor HC-SR04 and Final Assembly"></a>Step6:Ultrasonic Sensor HC-SR04 and Final Assembly</h3><p><img src="/2023zjude-NOBRAINNOPAIN/pj3/cs2-8.png"></p>
+<p>1 - Place the ultrasound sensor in front of the skull, as close as possible to the eyes, to simulate that the skull will look cross-eyed when it is in front of the eyes;<br>2 - Make a wooden support like mine or anything else to hold the skull, use your creativity.<br>3 - Cover the entire electronic part with a bidim blanket or another dark cloth to hide the electronic part (except the sensor).</p>
+<h3 id="Step7-SKETCH"><a href="#Step7-SKETCH" class="headerlink" title="Step7:SKETCH"></a>Step7:SKETCH</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">// MOUTH:</span><br><span class="line">int fechada = 140;</span><br><span class="line">const int abertura1 = 110;</span><br><span class="line">const int abertura2 = 90;</span><br><span class="line">const int abertura3 = 70; // Abertura máxima para não <span class="keyword">for</span>çar o servo</span><br><span class="line"></span><br><span class="line">// EYES:</span><br><span class="line">const int olhoEsquerdoFora = 50;</span><br><span class="line">const int olhoEsquerdoDentro = 130;</span><br><span class="line">int olhoEsquerdoFrente = 90;</span><br><span class="line"></span><br><span class="line">const int olhoDireitoFora = 130;</span><br><span class="line">const int olhoDireitoDentro = 50;</span><br><span class="line">int olhoDireitoFrente = 90;</span><br><span class="line"></span><br><span class="line">// SENSOR PINS:</span><br><span class="line">const int trigPin = 8; // Pino de saída <span class="keyword">do</span> sensor ultrassônico (trigger)</span><br><span class="line">const int echoPin = 7; // Pino de entrada <span class="keyword">do</span> sensor ultrassônico (<span class="built_in">echo</span>)</span><br><span class="line"></span><br><span class="line">// SERVO PINS:</span><br><span class="line">const int olhoEsquerdoPin = 3; // Pino digital com PWM para o servo <span class="keyword">do</span> olho esquerdo</span><br><span class="line">const int olhoDireitoPin = 5; // Pino digital com PWM para o servo <span class="keyword">do</span> olho direito</span><br><span class="line">const int mandibulaPin = 11;  // Pino digital com PWM para o servo da mandíbula</span><br><span class="line">const int enderecoOlhos = 0; // Endereço na EEPROM para armazenar a posição dos olhos</span><br><span class="line">const int enderecoMandibula = 2; // Endereço na EEPROM para armazenar a posição da mandíbula</span><br><span class="line"></span><br><span class="line">// Define as distâncias de controle das animações.</span><br><span class="line">const int distanciaLonge = 50; // Acima de 50 centímetros</span><br><span class="line">const int distanciaMedia = 30; // Entre 30 e 50 centímetros</span><br><span class="line">const int distanciaPerto = 15; // Menor ou igual a 15 centímetros</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="03-Case-Analysis"><a href="#03-Case-Analysis" class="headerlink" title="03 Case Analysis"></a>03 Case Analysis</h2><p>This skull can perform eye and jaw movements, making it a fascinating and immersive piece of electronic art.</p>
+<p>This case uses ultrasonic sensors to detect the approach and movement of people, allowing the eyes of the skull to move accordingly. This form of interaction is really interesting.The design of using a servo to control the rotation of the skull’s eyeballs is very natural, and the presentation effect of the work is very good.</p>
+<p>Place the ultrasonic sensor in front of the skull, as close to the eyes as possible, simulating that the skull will look cross-eyed when it is in front of the eyes. It’s simple and fun, and makes the skull seem like it’s really alive.</p>
+<br>
+
+<h2 id="04-Reproducibility-1"><a href="#04-Reproducibility-1" class="headerlink" title="04 Reproducibility"></a>04 Reproducibility</h2><p>1.Using ultrasonic sensors, the sensitivity is very high, and the code writing logic is easier to understand for students who have no coding foundation.</p>
+<p><img src="/2023zjude-NOBRAINNOPAIN/pj3/cs2-9.png"></p>
+<p>2.The product has less mechanical structure and will not be unable to be reproduced due to dimensional errors.</p>
+<p><img src="/2023zjude-NOBRAINNOPAIN/pj3/cs2-10.png"></p>
+<p>3.The raw materials required for this case are relatively easy to purchase and there are no special materials.</p>
+<p><img src="/2023zjude-NOBRAINNOPAIN/pj3/cs2-11.png"></p>
+<p>4.The case triggering process is relatively simple and is less likely to cause confusion.</p>
+<br>
+
+<h2 id="05-Application"><a href="#05-Application" class="headerlink" title="05 Application"></a>05 Application</h2><p>1.Compared with traditional works, electronic art works have much room for development.It can be used in exhibition halls, streets and other places<br>2.Although this project seems relatively simple, it has a wide range of applications and may be added as part of our final project.<br>3.Ultrasonic sensors and steering gears are relatively commonly used components, and their use in this case is of great reference for our future projects.</p>
+<br>
+
+<hr>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><em><a target="_blank" rel="noopener" href="https://www.instructables.com/KaboomBox-an-RFID-8-Track-Player/">https://www.instructables.com/KaboomBox-an-RFID-8-Track-Player/</a></em><br><em><a target="_blank" rel="noopener" href="https://www.instructables.com/Animatronic-Skull-With-Arduino/">https://www.instructables.com/Animatronic-Skull-With-Arduino/</a></em></p>
+<p><br><br><br></p>
+
+</div> 
+
+<script>
+    window.onload = detectors();
+</script>
+    <div class="post-footer">
+    <div class="h-line-primary"></div>
+    <nav class="post-nav">
+        <div class="prev-item">
+           
+                <div class="icon arrow-left"></div>
+                <div class="post-link">
+                    <a href="/2023zjude-NOBRAINNOPAIN/2023/10/25/Experiment-1-Water-Light-Program/">Prev</a>
+                </div>
+            
+        </div>
+        <div class="next-item">
+            
+                <div class="icon arrow-right"></div>
+                <div class="post-link">
+                  <a href="/2023zjude-NOBRAINNOPAIN/2023/10/25/Comparison-of-Arduino-and-Raspberry-Pi/">Next</a>  
+                </div>  
+            
+        </div>
+    </nav>
+</div>
+
+    
+      <div class="post-comment">
+
+     
+
+     
+    
+    
+
+</div>
+     
+  
+</article>
+        </div>
+      </div>
+      
+      <div class="footer">
+    <div class="flex-container">
+        <div class="footer-text">
+            
+            
+                Pan Jiangyu, Dong Yan, Zhou Yang, Jin Duola, Hou Liang | 
+            
+            
+                Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/zoeingwingkei/frame/">Frame</a>
+                
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    
+    
+
+  </body>
+</html>

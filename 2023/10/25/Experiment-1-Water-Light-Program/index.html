@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Lau">
+
+
+
+
+
+
+
+<title>Experiment 1 - Water Light Program | Hexo</title>
+
+
+
+    <link rel="icon" href="/2023zjude-NOBRAINNOPAIN/favicon.ico">
+
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Roboto+Mono&display=swap');
+</style>
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/2023zjude-NOBRAINNOPAIN/css/style.css">
+    
+
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/2023zjude-NOBRAINNOPAIN/js/frame.js"></script>
+    
+
+
+
+
+
+
+
+
+
+
+  <meta name="generator" content="Hexo 6.3.0"></head>
+  <body>
+    <div class="mask-border">
+    </div>
+
+    <div class="wrapper">
+
+      <div class="header">
+  <div class="flex-container">
+    <div class="header-inner">
+      <div class="site-brand-container">
+        <a href="/2023zjude-NOBRAINNOPAIN/">
+          
+            NO BRAIN NO PAIN.
+          
+        </a>
+      </div>
+      <div id="menu-btn" class="menu-btn" onclick="toggleMenu()">
+        Menu
+      </div>
+      <nav class="site-nav">
+        <ul class="menu-list">
+          
+            
+              <li class="menu-item">
+                <a href="/2023zjude-NOBRAINNOPAIN/">Home</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/2023zjude-NOBRAINNOPAIN/categories/gallery/">Projects</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/2023zjude-NOBRAINNOPAIN/Final-Project/">Final Project</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/2023zjude-NOBRAINNOPAIN/About-Us/">About Us</a>
+              </li> 
+                   
+          
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main">
+        <div class="flex-container">
+          <article id="post">
+
+  
+    <div class="post-head">
+    <div class="post-info">
+        <div class="tag-list">
+            
+        </div>
+        <div class="post-title">
+            
+            
+                Experiment 1 - Water Light Program
+            
+            
+        </div>
+        <span class="post-date">
+            Oct 25, 2023
+        </span>
+    </div>
+    <div class="post-img">
+        
+            <div class="h-line-primary"></div>
+              
+    </div>
+</div>
+    <div class="post-content">
+    <p><strong>Experimental Purpose:</strong><br>Use arduino to realize a small test of running lights, so that each small light goes on and off in sequence (the previous small light goes off while the next small light goes on) and lasts for 200ms.</p>
+<p><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex-1.png"></p>
+<p>Step 1: Components used, one arduino uno board, 8 led lights, 8 220Ω resistors, a number of Dupont wires, one breadboard.</p>
+<p><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex-2.png"></p>
+<p>Plug the bottom wire (GND) into the negative terminal of the breadboard (this step can be done anytime). Insert the led and resistor into the breadboard as shown in the picture</p>
+<p><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex-3.png"></p>
+<p>Wiring according to the diagram, pay attention to the correspondence between the port and the small light</p>
+<p><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex-4.png"></p>
+<p>Connect both negative terminals of the small lamps to the negative terminal of the breadboard.</p>
+<p>The code used for the experiment is as follows:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">/*实现流水灯</span><br><span class="line">让每个小灯依次亮灭，每个小灯亮200ms*/</span><br><span class="line">void <span class="function"><span class="title">setup</span></span>() </span><br><span class="line">&#123; </span><br><span class="line">  <span class="keyword">for</span>(int i = 6; i &lt;= 13; i++)</span><br><span class="line">  &#123;</span><br><span class="line">  pinMode(i, OUTPUT);//让6到13号接口输出电频</span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">loop</span></span>() &#123;</span><br><span class="line">       digitalWrite(6,LOW);//6灯灭</span><br><span class="line">       digitalWrite(7,HIGH);//7灯亮</span><br><span class="line">       delay(200);//延迟200ms</span><br><span class="line">       </span><br><span class="line">       digitalWrite(7,LOW);//7灯灭</span><br><span class="line">       digitalWrite(8,HIGH);//8灯灭</span><br><span class="line">       delay(200);//延迟200ms</span><br><span class="line">       </span><br><span class="line">       digitalWrite(8,LOW);//8灯灭</span><br><span class="line">       digitalWrite(9,HIGH);//9灯灭</span><br><span class="line">       delay(200);//延迟200ms</span><br><span class="line"></span><br><span class="line">       digitalWrite(9,LOW);//9灯灭</span><br><span class="line">       digitalWrite(10,HIGH);//10灯灭</span><br><span class="line">       delay(200);//延迟200ms</span><br><span class="line"></span><br><span class="line">       digitalWrite(10,LOW);//10灯灭</span><br><span class="line">       digitalWrite(11,HIGH);//11灯灭</span><br><span class="line">       delay(200);//延迟200ms</span><br><span class="line"></span><br><span class="line">       digitalWrite(11,LOW);//11灯灭</span><br><span class="line">       digitalWrite(12,HIGH);//12灯灭</span><br><span class="line">       delay(200);//延迟200ms</span><br><span class="line"></span><br><span class="line">       digitalWrite(12,LOW);//12灯灭</span><br><span class="line">       digitalWrite(13,HIGH);//13灯灭</span><br><span class="line">       delay(200);//延迟200ms</span><br><span class="line"></span><br><span class="line">       digitalWrite(13,LOW);//13灯灭</span><br><span class="line">       digitalWrite(6,HIGH);//6灯灭</span><br><span class="line">       delay(200);//延迟200ms</span><br><span class="line">      </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>The program runs on Tinkercad with the following results.<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex-7.gif"></p>
+<p>Enter the code and check the port.</p>
+<p><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex-5.png"></p>
+<p>Compile and upload to arduino boards</p>
+<p><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex-6.png"></p>
+<p>The overall hardware connection of the experiment is shown in Fig.</p>
+<p><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex-8.jpg"></p>
+<p>The results of the experimental runs are as follows.</p>
+<p><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex-9.gif"></p>
+<br>
+
+<hr>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><em><a target="_blank" rel="noopener" href="https://blog.csdn.net/foolbirdM/article/details/112733676">https://blog.csdn.net/foolbirdM/article/details/112733676</a></em><br><em><a target="_blank" rel="noopener" href="https://www.ncnynl.com/archives/201607/355.html">https://www.ncnynl.com/archives/201607/355.html</a></em></p>
+<p><br><br><br></p>
+
+</div> 
+
+<script>
+    window.onload = detectors();
+</script>
+    <div class="post-footer">
+    <div class="h-line-primary"></div>
+    <nav class="post-nav">
+        <div class="prev-item">
+           
+        </div>
+        <div class="next-item">
+            
+                <div class="icon arrow-right"></div>
+                <div class="post-link">
+                  <a href="/2023zjude-NOBRAINNOPAIN/2023/10/25/Arduino-Case-Study/">Next</a>  
+                </div>  
+            
+        </div>
+    </nav>
+</div>
+
+    
+      <div class="post-comment">
+
+     
+
+     
+    
+    
+
+</div>
+     
+  
+</article>
+        </div>
+      </div>
+      
+      <div class="footer">
+    <div class="flex-container">
+        <div class="footer-text">
+            
+            
+                Pan Jiangyu, Dong Yan, Zhou Yang, Jin Duola, Hou Liang | 
+            
+            
+                Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/zoeingwingkei/frame/">Frame</a>
+                
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    
+    
+
+  </body>
+</html>
