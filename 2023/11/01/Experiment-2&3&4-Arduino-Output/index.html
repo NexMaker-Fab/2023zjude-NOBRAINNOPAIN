@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Lau">
+
+
+
+
+
+
+
+<title>Experiment 2&amp;3&amp;4 - Arduino Output | Hexo</title>
+
+
+
+    <link rel="icon" href="/2023zjude-NOBRAINNOPAIN/favicon.ico">
+
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Roboto+Mono&display=swap');
+</style>
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/2023zjude-NOBRAINNOPAIN/css/style.css">
+    
+
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/2023zjude-NOBRAINNOPAIN/js/frame.js"></script>
+    
+
+
+
+
+
+
+
+
+
+
+  <meta name="generator" content="Hexo 6.3.0"></head>
+  <body>
+    <div class="mask-border">
+    </div>
+
+    <div class="wrapper">
+
+      <div class="header">
+  <div class="flex-container">
+    <div class="header-inner">
+      <div class="site-brand-container">
+        <a href="/2023zjude-NOBRAINNOPAIN/">
+          
+            NO BRAIN NO PAIN.
+          
+        </a>
+      </div>
+      <div id="menu-btn" class="menu-btn" onclick="toggleMenu()">
+        Menu
+      </div>
+      <nav class="site-nav">
+        <ul class="menu-list">
+          
+            
+              <li class="menu-item">
+                <a href="/2023zjude-NOBRAINNOPAIN/">Home</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/2023zjude-NOBRAINNOPAIN/categories/gallery/">Projects</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/2023zjude-NOBRAINNOPAIN/Final-Project/">Final Project</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/2023zjude-NOBRAINNOPAIN/About-Us/">About Us</a>
+              </li> 
+                   
+          
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main">
+        <div class="flex-container">
+          <article id="post">
+
+  
+    <div class="post-head">
+    <div class="post-info">
+        <div class="tag-list">
+            
+        </div>
+        <div class="post-title">
+            
+            
+                Experiment 2&amp;3&amp;4 - Arduino Output
+            
+            
+        </div>
+        <span class="post-date">
+            Nov 1, 2023
+        </span>
+    </div>
+    <div class="post-img">
+        
+            <div class="h-line-primary"></div>
+              
+    </div>
+</div>
+    <div class="post-content">
+    <h2 id="Article-Catalog"><a href="#Article-Catalog" class="headerlink" title="Article Catalog"></a>Article Catalog</h2><ul>
+<li>Experiment 2-LED</li>
+<li>Experiment 3-Motor</li>
+<li>Experiment 4-Screen</li>
+</ul>
+<br>
+
+<hr>
+<h2 id="Experiment-2-LED"><a href="#Experiment-2-LED" class="headerlink" title="Experiment 2-LED"></a>Experiment 2-LED</h2><p><strong>Overview</strong><br>The purpose of this experiment is to control two LED lights using Arduino, making them alternate in blinking to demonstrate the basic principle of digital LED control.</p>
+<p><strong>Materials</strong><br>1 Arduino development board<br>2 LED lights<br>Jumper wires</p>
+<p><strong>Circuit connection method</strong><br>We used ThinkerCAD to create the circuit diagram.<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex2/1.jpg"></p>
+<p>Circuit simulation after running the code.<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex2/GIF1.gif"></p>
+<p><strong>Production process</strong><br>Connect two LED lights to digital pins 12 and 13 on the Arduino development board.<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex2/2.jpg"></p>
+<p>Write code in the Arduino programming language to create an alternating blinking effect between the two LED lights.<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex2/3.jpg"></p>
+<p>Compilation successful, upload successful.<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex2/4.jpg"><br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex2/5.jpg"></p>
+<p>The code is as follows:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">int LED1=12;</span><br><span class="line">int LED2=13;</span><br><span class="line">void <span class="function"><span class="title">setup</span></span>()</span><br><span class="line">&#123; </span><br><span class="line">  pinMode(LED1, OUTPUT); </span><br><span class="line">  pinMode(LED2, OUTPUT);   </span><br><span class="line">&#125;</span><br><span class="line">void <span class="function"><span class="title">loop</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    digitalWrite(LED1,HIGH);</span><br><span class="line">    digitalWrite(LED2,LOW);</span><br><span class="line">    delay(1000);</span><br><span class="line">    digitalWrite(LED2,HIGH);</span><br><span class="line">    digitalWrite(LED1,LOW);</span><br><span class="line">    delay(1000);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em>Code Explanation:<br>int LED1&#x3D;12; and int LED2&#x3D;13;: Define LED1 and LED2 connected to digital pins 12 and 13 on the Arduino.<br>pinMode(LED1, OUTPUT); and pinMode(LED2, OUTPUT);: Set the pins as output to control the LED lights.<br>digitalWrite(LED1, HIGH); and digitalWrite(LED2, LOW);: Turn on LED1 and turn off LED2.<br>delay(1000);: Maintain the state for 1 second.<br>digitalWrite(LED2, HIGH); and digitalWrite(LED1, LOW);: Turn on LED2 and turn off LED1.<br>delay(1000);: Maintain the state for another 1 second.</em></p>
+<p><strong>Achievement display</strong><br>LED1 and LED2 alternately blink, with one on while the other is off, each staying on for 1 second, then alternating states, creating an alternating blinking effect.<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex2/GIF2.gif"></p>
+<p><strong>Conclusion</strong><br>Through this experiment, we have learned how to control multiple LED lights with Arduino, displaying the principles of digital output pin control.</p>
+<br>
+
+<hr>
+<h2 id="Experiment-3-Motor"><a href="#Experiment-3-Motor" class="headerlink" title="Experiment 3-Motor"></a>Experiment 3-Motor</h2><p><strong>Overview</strong><br>This experiment utilizes an Arduino board to control a servo motor. The servo motor will perform a sweeping motion back and forth, rotating to three different positions - 0 degrees, 40 degrees, and 80 degrees sequentially with a delay of 1 second at each position.</p>
+<p><strong>Materials</strong><br>1 Arduino development board<br>1 Servo motor<br>Jumper wires</p>
+<p><strong>Circuit connection method</strong><br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex2/6.jpg"></p>
+<p>Control principle of steering gear：<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex2/7.jpg"></p>
+<p>The servo motor is essentially a low-cost servo motor system. Its working principle is to receive a PWM pulse width modulation signal through an internal control circuit, and then control the rotation of the built-in motor. The built-in motor drives the series of reduction gear sets to transmit torque to the output shaft and steering wheel. The output shaft will be connected to a potentiometer used for feedback on angle position. Interconnected, when the steering wheel rotates, it will also drive the potentiometer to output a voltage signal, which is fed back to the control circuit inside the steering gear. The control circuit then determines the angle or speed of the steering gear rotation based on its position.</p>
+<p><strong>Production process</strong><br>The SG90 servo has three wires: power, ground, and signal.<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex2/8.jpg"></p>
+<p>The power cord is usually red and should be connected to the 5V pin on the Arduino board.<br>The ground wire is usually black or brown and should be connected to the GND pin on the Arduino board.<br>The signal pins are usually yellow, orange, or white and should be connected to the digital pins on the Arduino board.<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex2/9.jpg"></p>
+<p>Connect the signal wire of the servo motor to digital pin 10 on the Arduino board.<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex2/10.jpg"></p>
+<p>Upload the provided code to the Arduino board.Compilation successful, upload successful.<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex2/11.jpg"><br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex2/12.jpg"></p>
+<p>The code is as follows:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;Servo.h&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#define PIN_SERVO 10</span></span><br><span class="line">Servo myservo;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">setup</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">  myservo.attach(PIN_SERVO);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">loop</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">  myservo.write(0);</span><br><span class="line">  delay(1000);</span><br><span class="line">  myservo.write(40);</span><br><span class="line">  delay(1000);</span><br><span class="line">  myservo.write(80);</span><br><span class="line">  delay(1000);</span><br><span class="line">  myservo.write(40);</span><br><span class="line">  delay(1000);</span><br><span class="line">  myservo.write(0);</span><br><span class="line">  delay(1000);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em>Code Explanation:<br>The code employs the Servo library, allowing the Arduino to control the servo motor’s movement.<br>The myservo object is created to interface with the servo motor connected to digital pin 10 (PIN_SERVO defined as 10).<br>In the setup function, the servo motor is attached to the defined pin using myservo.attach(PIN_SERVO);.<br>Within the loop function, the servo motor is sequentially moved to four different positions: 0 degrees, 40 degrees, 80 degrees, 40 degrees (in reverse order), and back to 0 degrees.<br>After moving the motor to a specified position using myservo.write(angle);, a delay of 1 second (delay(1000);) follows before the next movement.<br>Observe the motion of the servo motor, which will move to 0 degrees, then 40 degrees, followed by 80 degrees and back to 40 degrees, with a 1-second pause at each position.</em></p>
+<p><strong>Achievement display</strong><br>The servo motor performs a sweeping motion, rotating in the sequence of 0 degrees, 40 degrees, 80 degrees, 40 degrees, and returns to 0 degrees. It pauses for 1 second at each position.<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex2/GIF3.gif"></p>
+<p><strong>Conclusion:</strong><br>This experiment demonstrates the precise control of a servo motor using an Arduino board. By specifying different angles, the servo motor is manipulated to move sequentially between multiple positions with timed delays. This experiment serves as a fundamental understanding of servo motor control and lays the groundwork for more complex applications involving precise motor positioning and motion control.</p>
+<br>
+
+<hr>
+<h2 id="Experiment-4-Screen"><a href="#Experiment-4-Screen" class="headerlink" title="Experiment 4-Screen"></a>Experiment 4-Screen</h2><p><strong>Overview</strong><br>This experiment aims to demonstrate the functionality of a 16x2 Liquid Crystal Display (LCD) using Arduino. The code will display “Hello, World!” on the first line of the LCD and continuously show the elapsed time (in seconds) since the Arduino board was powered up on the second line.</p>
+<p><strong>Materials</strong><br>1 Arduino development board<br>16x2 LCD Display<br>Jumper wires<br>10K resistor</p>
+<p><strong>Circuit connection method &amp; schematic diagram</strong><br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex2/13.jpg"><br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex2/14.png"></p>
+<p><strong>Production process</strong><br>Connect the 16x2 LCD display to the Arduino according to the specified pin configuration in the code.<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex2/15.jpg"><br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex2/GIF4.gif"><br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex2/GIF5.gif"></p>
+<p>Upload the provided code to the Arduino development board.<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex2/16.jpg"></p>
+<p>Observe the LCD display, where “hello, world!” will be shown on the first line, and the elapsed time since power-up will be displayed on the second line.<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex2/17.jpg"></p>
+<p>We found that the screen brightness was too bright to see clearly, so we started adjusting the resistance and used a sliding rheostat.<br>This is a comparison between before and after adjustment, and it can be seen that there is a significant difference in the brightness of the screen.<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex2/18.jpg"></p>
+<p>The code is as follows:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">  LiquidCrystal Library - Hello World</span><br><span class="line"></span><br><span class="line"> Demonstrates the use a 16x2 LCD display.  The LiquidCrystal</span><br><span class="line"> library works with all LCD displays that are compatible with the</span><br><span class="line"> Hitachi HD44780 driver. There are many of them out there, and you</span><br><span class="line"> can usually tell them by the 16-pin interface.</span><br><span class="line"></span><br><span class="line"> This sketch prints <span class="string">&quot;Hello World!&quot;</span> to the LCD</span><br><span class="line"> and shows the time.</span><br><span class="line"></span><br><span class="line">  The circuit:</span><br><span class="line"> * LCD RS pin to digital pin 12</span><br><span class="line"> * LCD Enable pin to digital pin 11</span><br><span class="line"> * LCD D4 pin to digital pin 5</span><br><span class="line"> * LCD D5 pin to digital pin 4</span><br><span class="line"> * LCD D6 pin to digital pin 3</span><br><span class="line"> * LCD D7 pin to digital pin 2</span><br><span class="line"> * LCD R/W pin to ground</span><br><span class="line"> * LCD VSS pin to ground</span><br><span class="line"> * LCD VCC pin to 5V</span><br><span class="line"> * 10K resistor:</span><br><span class="line"> * ends to +5V and ground</span><br><span class="line"> * wiper to LCD VO pin (pin 3)</span><br><span class="line"></span><br><span class="line"> Library originally added 18 Apr 2008</span><br><span class="line"> by David A. Mellis</span><br><span class="line"> library modified 5 Jul 2009</span><br><span class="line"> by Limor Fried (http://www.ladyada.net)</span><br><span class="line"> example added 9 Jul 2009</span><br><span class="line"> by Tom Igoe</span><br><span class="line"> modified 22 Nov 2010</span><br><span class="line"> by Tom Igoe</span><br><span class="line"></span><br><span class="line"> This example code is <span class="keyword">in</span> the public domain.</span><br><span class="line"></span><br><span class="line"> http://www.arduino.cc/en/Tutorial/LiquidCrystal</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">// include the library code:</span><br><span class="line"><span class="comment">#include &lt;LiquidCrystal.h&gt;</span></span><br><span class="line"></span><br><span class="line">// initialize the library with the numbers of the interface pins</span><br><span class="line">LiquidCrystal lcd(12, 11, 5, 4, 3, 2);</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">setup</span></span>() &#123;</span><br><span class="line">  // <span class="built_in">set</span> up the LCD<span class="string">&#x27;s number of columns and rows:</span></span><br><span class="line"><span class="string">  lcd.begin(16, 2);</span></span><br><span class="line"><span class="string">  // Print a message to the LCD.</span></span><br><span class="line"><span class="string">  lcd.print(&quot;hello, world!&quot;);</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">void loop() &#123;</span></span><br><span class="line"><span class="string">  // set the cursor to column 0, line 1</span></span><br><span class="line"><span class="string">  // (note: line 1 is the second row, since counting begins with 0):</span></span><br><span class="line"><span class="string">  lcd.setCursor(0, 1);</span></span><br><span class="line"><span class="string">  // print the number of seconds since reset:</span></span><br><span class="line"><span class="string">  lcd.print(millis() / 1000);</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><em>Code Explanation:<br>The code utilizes the LiquidCrystal library, compatible with the Hitachi HD44780 driver, enabling communication between the Arduino and the LCD display.<br>It initializes the library with the specified digital pins (12, 11, 5, 4, 3, 2) connected to the corresponding pins on the LCD.<br>In the setup function, it defines the dimensions of the LCD (16 columns, 2 rows) and prints “hello, world!” on the display.<br>The loop function continuously updates the second line of the display by setting the cursor to the second row and printing the number of seconds that have elapsed since the Arduino board was powered up (measured using the millis() function).</em></p>
+<p>Subsequently, we added the function of breath screen on the basis of the original experiment. The code is as follows:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">void <span class="function"><span class="title">setup</span></span>() &#123;</span><br><span class="line">  // <span class="built_in">set</span> up the LCD<span class="string">&#x27;s number of columns and rows:</span></span><br><span class="line"><span class="string">  lcd.begin(16, 2);</span></span><br><span class="line"><span class="string">  // Print a message to the LCD.</span></span><br><span class="line"><span class="string">  lcd.print(&quot;hello, world!&quot;);</span></span><br><span class="line"><span class="string">  delay(5000);  // delay for 5 seconds (5000 milliseconds)</span></span><br><span class="line"><span class="string">  lcd.clear();  // clear the LCD screen</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">void loop() &#123;</span></span><br><span class="line"><span class="string">  // set the cursor to column 0, line 1</span></span><br><span class="line"><span class="string">  // (note: line 1 is the second row, since counting begins with 0):</span></span><br><span class="line"><span class="string">  lcd.setCursor(0, 1);</span></span><br><span class="line"><span class="string">  // print the number of seconds since reset:</span></span><br><span class="line"><span class="string">  lcd.print(millis() / 1000);</span></span><br><span class="line"><span class="string">  delay(1000); // delay for 1 second to update every second</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex2/19.jpg"><br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex2/20.jpg"></p>
+<p>Finally, we added an infrared sensor to the original function, so that the screen initially displays “hello world”, and then turns off the LCD display when the infrared sensor value exceeds 250. At the same time, when the sensor is not triggered, the display shows the number of seconds that have passed since startup. </p>
+<p>The code is as follows:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">include &lt;LiquidCrystal.h&gt;</span><br><span class="line"></span><br><span class="line">LiquidCrystal lcd(12, 11, 5, 4, 3, 2);</span><br><span class="line">const int sensorPin = A0;</span><br><span class="line">int sensorValue = 0;</span><br><span class="line">bool isSensorTouched = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">setup</span></span>() &#123;</span><br><span class="line">  lcd.begin(16, 2);</span><br><span class="line">  pinMode(sensorPin, INPUT);</span><br><span class="line">  lcd.print(<span class="string">&quot;hello, world!&quot;</span>);</span><br><span class="line">  delay(5000);</span><br><span class="line">  lcd.clear();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">loop</span></span>() &#123;</span><br><span class="line">  sensorValue = analogRead(sensorPin);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (sensorValue &gt; 250) &#123;</span><br><span class="line">    isSensorTouched = <span class="literal">true</span>;</span><br><span class="line">    lcd.clear();</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    isSensorTouched = <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (!isSensorTouched) &#123;</span><br><span class="line">    lcd.setCursor(0, 1);</span><br><span class="line">    lcd.print(<span class="string">&quot;Time: &quot;</span>);</span><br><span class="line">    lcd.print(millis() / 1000);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  delay(1000);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex2/21.jpg"><br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex2/22.jpg"></p>
+<p><strong>Achievement display</strong><br>Upon executing the code, the LCD will display “hello, world!” on the first row and continuously display the number of seconds since the Arduino was powered up on the second row.<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex2/GIF6.gif"></p>
+<p>Status after adding screen rest function:<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex2/GIF7.gif"></p>
+<p>Status after adding an infrared sensor:<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex2/GIF8.gif"></p>
+<p><strong>Conclusion</strong><br>This experiment demonstrates the use of an LCD with an Arduino board to output text and dynamically update information on the display. It illustrates the basic functionality of an LCD and its integration with an Arduino, showcasing a simple text display and real-time information presentation.</p>
+<br>
+
+<hr>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a target="_blank" rel="noopener" href="https://www.nexmaker.com/doc/5arduino/Arduino_output.html">https://www.nexmaker.com/doc/5arduino/Arduino_output.html</a><br><a target="_blank" rel="noopener" href="https://docs.arduino.cc/learn/electronics/lcd-displays">https://docs.arduino.cc/learn/electronics/lcd-displays</a><br><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/459546366?utm_id=0">https://www.zhihu.com/question/459546366?utm_id=0</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/643197865">https://zhuanlan.zhihu.com/p/643197865</a></p>
+<p><br><br><br></p>
+
+</div> 
+
+<script>
+    window.onload = detectors();
+</script>
+    <div class="post-footer">
+    <div class="h-line-primary"></div>
+    <nav class="post-nav">
+        <div class="prev-item">
+           
+        </div>
+        <div class="next-item">
+            
+                <div class="icon arrow-right"></div>
+                <div class="post-link">
+                  <a href="/2023zjude-NOBRAINNOPAIN/2023/10/25/Experiment-1-Water-Light-Program/">Next</a>  
+                </div>  
+            
+        </div>
+    </nav>
+</div>
+
+    
+      <div class="post-comment">
+
+     
+
+     
+    
+    
+
+</div>
+     
+  
+</article>
+        </div>
+      </div>
+      
+      <div class="footer">
+    <div class="flex-container">
+        <div class="footer-text">
+            
+            
+                Pan Jiangyu, Dong Yan, Zhou Yang, Jin Duola, Hou Liang | 
+            
+            
+                Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/zoeingwingkei/frame/">Frame</a>
+                
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    
+    
+
+  </body>
+</html>

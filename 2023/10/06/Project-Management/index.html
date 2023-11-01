@@ -169,7 +169,8 @@
 <br>
 
 <hr>
-<h2 id="03-Design-the-Website"><a href="#03-Design-the-Website" class="headerlink" title="03 Design the Website"></a>03 Design the Website</h2><p>According to the template source page on how to modify the template, complete the modification of the home page, the project column, and add the team introduction.<br><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-14.png" title="Template Introduction"><br><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-15.png" title="Team Introduction"></p>
+<h2 id="03-Design-Manage-the-Website"><a href="#03-Design-Manage-the-Website" class="headerlink" title="03 Design &amp; Manage the Website"></a>03 Design &amp; Manage the Website</h2><p>According to the template source page on how to modify the template, complete the modification of the home page, the project column, and add the team introduction.<br><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-14.png" title="Template Introduction"><br><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-15.png" title="Team Introduction"></p>
+<p>The folding and file relationships of the web page source files are shown in the following figure.<br><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-31.png"></p>
 <br>
 
 <hr>
@@ -177,73 +178,10 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new post <span class="string">&quot;Project Management&quot;</span></span><br></pre></td></tr></table></figure>
 <p><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-22.png"></p>
 <p>Modify the front-matter of the document, add Documents to the gallery and add covers to the document, so that in the “Project” page we can see the document and its cover.<br><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-23.png"><br><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-24.png"></p>
-<p>Use markdown language to write the content of the body, which part of the markdown language writing method is as follows:</p>
-<blockquote>
-<p><strong>Head Line</strong></p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># H1</span></span><br><span class="line"><span class="comment">## H2</span></span><br><span class="line">...</span><br><span class="line"><span class="comment">###### Up to H6</span></span><br></pre></td></tr></table></figure>
-<p>The effect is as follows:</p>
-<h1 id="H1"><a href="#H1" class="headerlink" title="H1"></a>H1</h1><h2 id="H2"><a href="#H2" class="headerlink" title="H2"></a>H2</h2><h3 id="H3"><a href="#H3" class="headerlink" title="H3"></a>H3</h3><h4 id="H4"><a href="#H4" class="headerlink" title="H4"></a>H4</h4><h5 id="H5"><a href="#H5" class="headerlink" title="H5"></a>H5</h5><h6 id="H6"><a href="#H6" class="headerlink" title="H6"></a>H6</h6><br>
+<p>Use markdown language to write the content of the body. Some of these fragments are written in markdown language as follows.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># First of All, We Build a Website.</span></span><br><span class="line"></span><br><span class="line">&lt;br&gt;</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"><span class="comment">## 01 Software Installation</span></span><br><span class="line"><span class="comment">### Install and Configure Node.js</span></span><br><span class="line">Node.js download: [It makes JavaScript a scripting language on par with server-side languages like PHP, Python, Perl, Ruby, etc.].</span><br><span class="line"></span><br><span class="line">![](/pj1/pj1-1.png <span class="string">&quot;Install Node.js&quot;</span>)</span><br><span class="line">![](/pj1/pj1-2.png <span class="string">&quot;Check Version&quot;</span>)</span><br><span class="line"></span><br><span class="line">&lt;br&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">### Install and Configure Git</span></span><br><span class="line">Git is a concurrently-sourced distributed version control system that efficiently and rapidly handles the versioning of projects ranging from very small to very large.</span><br><span class="line"></span><br><span class="line">![](/pj1/pj1-3.png <span class="string">&quot;Install Git&quot;</span>)</span><br><span class="line">![](/pj1/pj1-4.png <span class="string">&quot;Check Version&quot;</span>)</span><br><span class="line"></span><br><span class="line">&lt;br&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">### Install and Configure Sublime Text</span></span><br><span class="line">Editing of hexo Blog is accomplished through the use of Sublime Text.</span><br><span class="line">The URL <span class="keyword">for</span> sublime is as follows：</span><br><span class="line">https://www.sublimetext.com/</span><br><span class="line"></span><br><span class="line">![](/pj1/pj1-6.png <span class="string">&quot;Install Sublime Text&quot;</span>)</span><br><span class="line"></span><br><span class="line">&lt;br&gt;</span><br><span class="line"></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p><strong>Bold</strong></p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> **word**</span><br><span class="line">Or <span class="keyword">select</span> the word you want to bold and use the shortcut key crtl + B</span><br></pre></td></tr></table></figure>
-<p>The effect is as follows:<br><strong>Bold</strong></p>
-<br>
 
-<blockquote>
-<p><strong>Lean</strong></p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> *word*</span><br><span class="line">Or <span class="keyword">select</span> the word you want to tilt and use the shortcut key crtl + I</span><br></pre></td></tr></table></figure>
-<p>The effect is as follows:<br> <em>word</em></p>
- <br>
-
-<blockquote>
-<p><strong>Underscores</strong></p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;u&gt;word&lt;/u&gt;</span><br></pre></td></tr></table></figure>
-<p>The effect is as follows:<br><u>word</u></p>
-<br>
-
-<blockquote>
-<p><strong>Dividing line</strong></p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">---</span><br></pre></td></tr></table></figure>
-<p>The effect is as follows:</p>
-<hr>
-<br>
-
-<blockquote>
-<p><strong>Point</strong></p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- Disorganized sub-point I</span><br><span class="line">  * Disorderly subordination point I</span><br><span class="line">* Disorganized sub-point II</span><br></pre></td></tr></table></figure>
-<p>The effect is as follows:</p>
-<ul>
-<li>Disorganized sub-point I<ul>
-<li>Disorderly subordination point I</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>Disorganized sub-point II</li>
-</ul>
-<br>
-
-<blockquote>
-<p><strong>Code Block</strong></p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">``` bash</span><br><span class="line">$ hexo new post <span class="string">&quot;Project Management&quot;</span></span><br></pre></td></tr></table></figure>
-<p>The effect is as follows:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new post <span class="string">&quot;Project Management&quot;</span></span><br></pre></td></tr></table></figure>
-
-<br>
-
-<blockquote>
-<p><strong>Picture</strong></p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](/pj1/pj1-25.png)</span><br></pre></td></tr></table></figure>
-<p>The effect is as follows:<br><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-25.png"></p>
 <br>
 
 <hr>
@@ -256,7 +194,17 @@
 <p><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-19.png" title="Download hexo-deployer-git"></p>
 <p>Add the following configuration to config.yml (if it already exists, replace it with the following).</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: https://github.com/&lt;username&gt;/&lt;project&gt;</span><br><span class="line">  <span class="comment"># example, https://github.com/hexojs/hexojs.github.io</span></span><br><span class="line">  branch: gh-pages</span><br></pre></td></tr></table></figure>
-<p><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-20.png" title="config"><br>Execute hexo clean &amp; hexo deploy to complete the web upload.<br><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-21.png" title="Web Upload"></p>
+<p>The configuration effect is as follows.<br><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-20.png" title="config"><br>Execute the following code to save and upload the page.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<p>Or use the following abbreviation.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo c</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-21.png" title="Web Upload"></p>
+<p>Find the grouping of uploads on github and access the uploaded pages in Settings-Pages.<br><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-26.png"></p>
+<p>Uploaded successfully!<br><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-27.png"></p>
+<br>
+
+<hr>
+<h2 id="06-Teamwork"><a href="#06-Teamwork" class="headerlink" title="06 Teamwork"></a>06 Teamwork</h2><p>Add the project manager in the project Settings-Collaborators and teams, invite the team members and add them as Maintain role.<br><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-28.png"><br><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-29.png"><br>Team members can choose to accept being a project administrator in the github message.<br><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-30.png"><br>Complete team member invitations.<br><img src="/2023zjude-NOBRAINNOPAIN/pj1/pj1-32.png"></p>
 <br>
 
 <hr>
