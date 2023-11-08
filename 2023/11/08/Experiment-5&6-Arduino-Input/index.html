@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Lau">
+
+
+
+
+
+
+
+<title>Experiment 5&amp;6 - Arduino Input | Hexo</title>
+
+
+
+    <link rel="icon" href="/2023zjude-NOBRAINNOPAIN/favicon.ico">
+
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Roboto+Mono&display=swap');
+</style>
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/2023zjude-NOBRAINNOPAIN/css/style.css">
+    
+
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/2023zjude-NOBRAINNOPAIN/js/frame.js"></script>
+    
+
+
+
+
+
+
+
+
+
+
+  <meta name="generator" content="Hexo 6.3.0"></head>
+  <body>
+    <div class="mask-border">
+    </div>
+
+    <div class="wrapper">
+
+      <div class="header">
+  <div class="flex-container">
+    <div class="header-inner">
+      <div class="site-brand-container">
+        <a href="/2023zjude-NOBRAINNOPAIN/">
+          
+            NO BRAIN NO PAIN.
+          
+        </a>
+      </div>
+      <div id="menu-btn" class="menu-btn" onclick="toggleMenu()">
+        Menu
+      </div>
+      <nav class="site-nav">
+        <ul class="menu-list">
+          
+            
+              <li class="menu-item">
+                <a href="/2023zjude-NOBRAINNOPAIN/">Home</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/2023zjude-NOBRAINNOPAIN/categories/gallery/">Projects</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/2023zjude-NOBRAINNOPAIN/Final-Project/">Final Project</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/2023zjude-NOBRAINNOPAIN/About-Us/">About Us</a>
+              </li> 
+                   
+          
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main">
+        <div class="flex-container">
+          <article id="post">
+
+  
+    <div class="post-head">
+    <div class="post-info">
+        <div class="tag-list">
+            
+        </div>
+        <div class="post-title">
+            
+            
+                Experiment 5&amp;6 - Arduino Input
+            
+            
+        </div>
+        <span class="post-date">
+            Nov 8, 2023
+        </span>
+    </div>
+    <div class="post-img">
+        
+            <div class="h-line-primary"></div>
+              
+    </div>
+</div>
+    <div class="post-content">
+    <h2 id="Article-Catalog"><a href="#Article-Catalog" class="headerlink" title="Article Catalog"></a>Article Catalog</h2><ul>
+<li>Experiment 5-Transducer</li>
+<li>Experiment 6-Environmental monitor</li>
+</ul>
+<br>
+
+<hr>
+<h2 id="Experiment-5-Transducer"><a href="#Experiment-5-Transducer" class="headerlink" title="Experiment 5-Transducer"></a>Experiment 5-Transducer</h2><p><strong>Overview</strong><br>The purpose of this experiment is to make a project involving switches and sensors with arduino.</p>
+<p><strong>Materials</strong><br>1 Arduino development board<br>2 temperature and humidity sensor<br>3 resistor<br>4 switch<br>5 Jumper wires</p>
+<p><strong>Circuit connection method</strong><br>We used ThinkerCAD to create the circuit diagram.<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex5/1.png"></p>
+<p>Circuit simulation after running the code.<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex5/GIF1.GIF"></p>
+<p><strong>Production process</strong><br>Connect the switch and DHT11 temperature and humidity sensor to the Arduino as per the next diagram.</p>
+<p>First, install the library: DHT and upload the sample code.<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex5/2.png"></p>
+<p>1 Including DHT library:<br>2 Define the pin of the DHT sensor connection, connected to digital pin 2.<br>3 Define the DHT sensor type: DHT11.<br>4 Initialize a dht object named DHT using the pin and the previously defined type.<br>5 In setup (), initialize the serial monitor at a baud rate of 9600 for debugging.<br>6 Use the.begin () method to initialize the DHT sensor.<br>7 At the beginning of loop (), there is a 2-second delay. This delay is needed to give the sensor enough time to take a reading.<br>8 Use the readHumidity () method on dht objects to save the humidity in the h variable.<br>9 Read the temperature using the readTemperature () method.<br>10 All readings are displayed on the serial monitor.</p>
+<p>The code is as follows:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;dht11.h&gt;</span></span><br><span class="line"> const int ldrPin = A0;</span><br><span class="line">dht11 DHT11;</span><br><span class="line"></span><br><span class="line"><span class="comment">#define DHT11PIN 2</span></span><br><span class="line"> </span><br><span class="line">void <span class="function"><span class="title">setup</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">  </span><br><span class="line">  Serial.begin(9600);</span><br><span class="line">  Serial.println(<span class="string">&quot;DHT11 TEST PROGRAM &quot;</span>);</span><br><span class="line">  Serial.<span class="built_in">print</span>(<span class="string">&quot;LIBRARY VERSION: &quot;</span>);</span><br><span class="line">  Serial.println(DHT11LIB_VERSION);</span><br><span class="line">  Serial.println();</span><br><span class="line">  pinMode(ldrPin, INPUT);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">void <span class="function"><span class="title">loop</span></span>()</span><br><span class="line">&#123; int ldrValue = analogRead(A0); </span><br><span class="line">  Serial.<span class="built_in">print</span>(<span class="string">&quot;ldrValue = &quot;</span>);</span><br><span class="line">  Serial.println(ldrValue); </span><br><span class="line">  delay(500);</span><br><span class="line">  Serial.println(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line"> </span><br><span class="line">  int chk = DHT11.<span class="built_in">read</span>(DHT11PIN);</span><br><span class="line"> </span><br><span class="line">  Serial.<span class="built_in">print</span>(<span class="string">&quot;Read sensor: &quot;</span>);</span><br><span class="line">  switch (chk)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">case</span> DHTLIB_OK: </span><br><span class="line">                Serial.println(<span class="string">&quot;OK&quot;</span>); </span><br><span class="line">                <span class="built_in">break</span>;</span><br><span class="line">    <span class="keyword">case</span> DHTLIB_ERROR_CHECKSUM: </span><br><span class="line">                Serial.println(<span class="string">&quot;Checksum error&quot;</span>); </span><br><span class="line">                <span class="built_in">break</span>;</span><br><span class="line">    <span class="keyword">case</span> DHTLIB_ERROR_TIMEOUT: </span><br><span class="line">                Serial.println(<span class="string">&quot;Time out error&quot;</span>); </span><br><span class="line">                <span class="built_in">break</span>;</span><br><span class="line">    default: </span><br><span class="line">                Serial.println(<span class="string">&quot;Unknown error&quot;</span>); </span><br><span class="line">                <span class="built_in">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">  Serial.<span class="built_in">print</span>(<span class="string">&quot;Humidity (%): &quot;</span>);</span><br><span class="line">  Serial.println((float)DHT11.humidity, <span class="number">2</span>);</span><br><span class="line"> </span><br><span class="line">  Serial.print(&quot;Temperature (oC): &quot;);</span><br><span class="line">  Serial.println((float)DHT11.temperature, <span class="number">2</span>);</span><br><span class="line"> </span><br><span class="line">  Serial.print(&quot;Temperature (oF): &quot;);</span><br><span class="line">  Serial.println(Fahrenheit(DHT11.temperature), <span class="number">2</span>);</span><br><span class="line"> </span><br><span class="line">  Serial.print(&quot;Temperature (K): &quot;);</span><br><span class="line">  Serial.println(Kelvin(DHT11.temperature), <span class="number">2</span>);</span><br><span class="line"> </span><br><span class="line">  Serial.print(&quot;Dew Point (oC): &quot;);</span><br><span class="line">  Serial.println(dewPoint(DHT11.temperature, DHT11.humidity));</span><br><span class="line"> </span><br><span class="line">  Serial.<span class="built_in">print</span>(<span class="string">&quot;Dew PointFast (oC): &quot;</span>);</span><br><span class="line">  Serial.println(dewPointFast(DHT11.temperature, DHT11.humidity));</span><br><span class="line"> </span><br><span class="line">  delay(2000);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Achievement display</strong><br>When the switch is pressed, the temperature and humidity are read and the results are displayed on the serial monitor.</p>
+<p><strong>Summary:</strong><br>Through this experiment, we successfully learned how to use the switch and sensor, and we can get the relevant information we want through the sensor.<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex5/GIF2.GIF"></p>
+<br>
+
+<hr>
+<h2 id="Experiment-6-Environmental-monitor"><a href="#Experiment-6-Environmental-monitor" class="headerlink" title="Experiment 6-Environmental monitor"></a>Experiment 6-Environmental monitor</h2><p><strong>Overview</strong><br>The purpose is to build an environment monitor with arduino.</p>
+<p><strong>Materials</strong><br>1 Arduino development board<br>2 temperature and humidity sensor<br>3 LDR<br>4 resistor<br>5 Jumper wires</p>
+<p><strong>Circuit connection method</strong><br>We used ThinkerCAD to create the circuit diagram.<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex5/3.png"></p>
+<p><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex5/4.png"></p>
+<p><strong>Production process</strong><br>Use Arduino Uno to drive the DHT11 temperature&#x2F;humidity module and photoresistor.<br>After the program is run, the sensor will display the temperature, humidity and light intensity of the sensing test through the serial port monitor of the Arduino IDE.</p>
+<p>The code is as follows:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line">double Fahrenheit(double celsius) </span><br><span class="line">&#123;</span><br><span class="line">        <span class="built_in">return</span> 1.8 * celsius + 32;</span><br><span class="line">&#125;    </span><br><span class="line">double Kelvin(double celsius)</span><br><span class="line">&#123;</span><br><span class="line">        <span class="built_in">return</span> celsius + 273.15;</span><br><span class="line">&#125;    </span><br><span class="line"> </span><br><span class="line">double dewPoint(double celsius, double humidity)</span><br><span class="line">&#123;</span><br><span class="line">        double A0= 373.15/(273.15 + celsius);</span><br><span class="line">        double SUM = -7.90298 * (A0-1);</span><br><span class="line">        SUM += 5.02808 * log10(A0);</span><br><span class="line">        SUM += -1.3816e-7 * (pow(10, (11.344*(1-1/A0)))-1) ;</span><br><span class="line">        SUM += 8.1328e-3 * (pow(10,(-3.49149*(A0-1)))-1) ;</span><br><span class="line">        SUM += log10(1013.246);</span><br><span class="line">        double VP = pow(10, SUM-3) * humidity;</span><br><span class="line">        double T = <span class="built_in">log</span>(VP/0.61078);   // temp var</span><br><span class="line">        <span class="built_in">return</span> (241.88 * T) / (17.558-T);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">double dewPointFast(double celsius, double humidity)</span><br><span class="line">&#123;</span><br><span class="line">        double a = 17.271;</span><br><span class="line">        double b = 237.7;</span><br><span class="line">        double temp = (a * celsius) / (b + celsius) + <span class="built_in">log</span>(humidity/100);</span><br><span class="line">        double Td = (b * temp) / (a - temp);</span><br><span class="line">        <span class="built_in">return</span> Td;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">#include &lt;dht11.h&gt;</span></span><br><span class="line"> const int ldrPin = A0;</span><br><span class="line">dht11 DHT11;</span><br><span class="line"> </span><br><span class="line"><span class="comment">#define DHT11PIN 2</span></span><br><span class="line"> </span><br><span class="line">void <span class="function"><span class="title">setup</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">  </span><br><span class="line">  Serial.begin(9600);</span><br><span class="line">  Serial.println(<span class="string">&quot;DHT11 TEST PROGRAM &quot;</span>);</span><br><span class="line">  Serial.<span class="built_in">print</span>(<span class="string">&quot;LIBRARY VERSION: &quot;</span>);</span><br><span class="line">  Serial.println(DHT11LIB_VERSION);</span><br><span class="line">  Serial.println();</span><br><span class="line">  pinMode(ldrPin, INPUT);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">void <span class="function"><span class="title">loop</span></span>()</span><br><span class="line">&#123; int ldrValue = analogRead(A0); </span><br><span class="line">  Serial.<span class="built_in">print</span>(<span class="string">&quot;ldrValue = &quot;</span>);</span><br><span class="line">  Serial.println(ldrValue); </span><br><span class="line">  delay(500);</span><br><span class="line">  Serial.println(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line"> </span><br><span class="line">  int chk = DHT11.<span class="built_in">read</span>(DHT11PIN);</span><br><span class="line"> </span><br><span class="line">  Serial.<span class="built_in">print</span>(<span class="string">&quot;Read sensor: &quot;</span>);</span><br><span class="line">  switch (chk)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">case</span> DHTLIB_OK: </span><br><span class="line">                Serial.println(<span class="string">&quot;OK&quot;</span>); </span><br><span class="line">                <span class="built_in">break</span>;</span><br><span class="line">    <span class="keyword">case</span> DHTLIB_ERROR_CHECKSUM: </span><br><span class="line">                Serial.println(<span class="string">&quot;Checksum error&quot;</span>); </span><br><span class="line">                <span class="built_in">break</span>;</span><br><span class="line">    <span class="keyword">case</span> DHTLIB_ERROR_TIMEOUT: </span><br><span class="line">                Serial.println(<span class="string">&quot;Time out error&quot;</span>); </span><br><span class="line">                <span class="built_in">break</span>;</span><br><span class="line">    default: </span><br><span class="line">                Serial.println(<span class="string">&quot;Unknown error&quot;</span>); </span><br><span class="line">                <span class="built_in">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">  Serial.<span class="built_in">print</span>(<span class="string">&quot;Humidity (%): &quot;</span>);</span><br><span class="line">  Serial.println((float)DHT11.humidity, <span class="number">2</span>);</span><br><span class="line"> </span><br><span class="line">  Serial.print(&quot;Temperature (oC): &quot;);</span><br><span class="line">  Serial.println((float)DHT11.temperature, <span class="number">2</span>);</span><br><span class="line"> </span><br><span class="line">  Serial.print(&quot;Temperature (oF): &quot;);</span><br><span class="line">  Serial.println(Fahrenheit(DHT11.temperature), <span class="number">2</span>);</span><br><span class="line"> </span><br><span class="line">  Serial.print(&quot;Temperature (K): &quot;);</span><br><span class="line">  Serial.println(Kelvin(DHT11.temperature), <span class="number">2</span>);</span><br><span class="line"> </span><br><span class="line">  Serial.print(&quot;Dew Point (oC): &quot;);</span><br><span class="line">  Serial.println(dewPoint(DHT11.temperature, DHT11.humidity));</span><br><span class="line"> </span><br><span class="line">  Serial.<span class="built_in">print</span>(<span class="string">&quot;Dew PointFast (oC): &quot;</span>);</span><br><span class="line">  Serial.println(dewPointFast(DHT11.temperature, DHT11.humidity));</span><br><span class="line"> </span><br><span class="line">  delay(2000);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Achievement display</strong><br>When the switch is pressed, the light intensity and temperature&#x2F;humidity are read and the results are displayed on the serial monitor.</p>
+<p><strong>Summary</strong><br>Through this experiment, we have successfully learned how to use photoresistor and temperature&#x2F;humidity sensor to build environmental monitoring equipment, and we can obtain the relevant information we want through the environmental monitoring equipment built.<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/ex5/GIF3.GIF"></p>
+<br>
+
+<hr>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><em><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42645653/article/details/112172242">https://blog.csdn.net/weixin_42645653/article/details/112172242</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44176343/article/details/111913717">https://blog.csdn.net/qq_44176343/article/details/111913717</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/zbp_12138/article/details/111149026">https://blog.csdn.net/zbp_12138/article/details/111149026</a></em></p>
+<p><br><br><br></p>
+
+</div> 
+
+<script>
+    window.onload = detectors();
+</script>
+    <div class="post-footer">
+    <div class="h-line-primary"></div>
+    <nav class="post-nav">
+        <div class="prev-item">
+           
+                <div class="icon arrow-left"></div>
+                <div class="post-link">
+                    <a href="/2023zjude-NOBRAINNOPAIN/2023/11/08/Theme-Identification/">Prev</a>
+                </div>
+            
+        </div>
+        <div class="next-item">
+            
+                <div class="icon arrow-right"></div>
+                <div class="post-link">
+                  <a href="/2023zjude-NOBRAINNOPAIN/2023/11/01/Experiment-2&amp;3&amp;4-Arduino-Output/">Next</a>  
+                </div>  
+            
+        </div>
+    </nav>
+</div>
+
+    
+      <div class="post-comment">
+
+     
+
+     
+    
+    
+
+</div>
+     
+  
+</article>
+        </div>
+      </div>
+      
+      <div class="footer">
+    <div class="flex-container">
+        <div class="footer-text">
+            
+            
+                Pan Jiangyu, Dong Yan, Zhou Yang, Jin Duola, Hou Liang | 
+            
+            
+                Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/zoeingwingkei/frame/">Frame</a>
+                
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    
+    
+
+  </body>
+</html>
