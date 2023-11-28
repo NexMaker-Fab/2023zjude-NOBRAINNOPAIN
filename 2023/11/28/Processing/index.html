@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Lau">
+
+
+
+
+
+
+
+<title>Processing | Hexo</title>
+
+
+
+    <link rel="icon" href="/2023zjude-NOBRAINNOPAIN/favicon.ico">
+
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Roboto+Mono&display=swap');
+</style>
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/2023zjude-NOBRAINNOPAIN/css/style.css">
+    
+
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/2023zjude-NOBRAINNOPAIN/js/frame.js"></script>
+    
+
+
+
+
+
+
+
+
+
+
+  <meta name="generator" content="Hexo 6.3.0"></head>
+  <body>
+    <div class="mask-border">
+    </div>
+
+    <div class="wrapper">
+
+      <div class="header">
+  <div class="flex-container">
+    <div class="header-inner">
+      <div class="site-brand-container">
+        <a href="/2023zjude-NOBRAINNOPAIN/">
+          
+            NO BRAIN NO PAIN.
+          
+        </a>
+      </div>
+      <div id="menu-btn" class="menu-btn" onclick="toggleMenu()">
+        Menu
+      </div>
+      <nav class="site-nav">
+        <ul class="menu-list">
+          
+            
+              <li class="menu-item">
+                <a href="/2023zjude-NOBRAINNOPAIN/">Home</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/2023zjude-NOBRAINNOPAIN/categories/gallery/">Projects</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/2023zjude-NOBRAINNOPAIN/Final-Project/">Final Project</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/2023zjude-NOBRAINNOPAIN/About-Us/">About Us</a>
+              </li> 
+                   
+          
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main">
+        <div class="flex-container">
+          <article id="post">
+
+  
+    <div class="post-head">
+    <div class="post-info">
+        <div class="tag-list">
+            
+        </div>
+        <div class="post-title">
+            
+            
+                Processing
+            
+            
+        </div>
+        <span class="post-date">
+            Nov 28, 2023
+        </span>
+    </div>
+    <div class="post-img">
+        
+            <img src="/2023zjude-NOBRAINNOPAIN/pj5/processing.png" alt="featured_image">
+              
+    </div>
+</div>
+    <div class="post-content">
+    <h1 id="Fifth-We-Begin-to-Visualize-Our-Musical-Interactions-Using-PROCESSING"><a href="#Fifth-We-Begin-to-Visualize-Our-Musical-Interactions-Using-PROCESSING" class="headerlink" title="Fifth, We Begin to Visualize Our Musical Interactions Using PROCESSING."></a>Fifth, We Begin to Visualize Our Musical Interactions Using PROCESSING.</h1><br>
+
+<hr>
+<h2 id="Article-Catalog"><a href="#Article-Catalog" class="headerlink" title="Article Catalog"></a>Article Catalog</h2><ul>
+<li>Overview</li>
+<li>Materials</li>
+<li>Process</li>
+<li>Achievement Display</li>
+<li>Summary</li>
+</ul>
+<br>
+
+<hr>
+<h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>The objective of this experiment was to create an interactive music visualization demonstration using Processing 4.3. By writing code, we aimed to generate visual effects related to the rhythm of the music while it plays. This experiment was designed to demonstrate how audio data can be transformed into visual art and to explore the interactive relationship between music and visual arts.</p>
+<br>
+
+<hr>
+<h2 id="Materials"><a href="#Materials" class="headerlink" title="Materials"></a>Materials</h2><ul>
+<li><strong>Software</strong>: Processing 4.3</li>
+<li><strong>Library</strong>: Minim library, used for audio processing</li>
+<li><strong>Music File</strong>: Any mp3 format music file, here we chose the song “Thirsty” by the girl group aespa as our demonstration music</li>
+</ul>
+<br>
+
+<hr>
+<h2 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h2><ol>
+<li><p><strong>Installing Minim Library</strong>: Install the Minim library via “Sketch” &gt; “Import Library…” &gt; “Manage Libraries”, search for “minim” and select to download.<br><img src="/2023zjude-NOBRAINNOPAIN/pj5/1.png"><br><img src="/2023zjude-NOBRAINNOPAIN/pj5/2.png"></p>
+</li>
+<li><p><strong>Environment Setup</strong>: Initialize the Processing environment and set the canvas size.</p>
+</li>
+<li><p><strong>Audio Processing</strong>: Load the music file using the Minim library and loop it.</p>
+</li>
+<li><p><strong>Visualization Display</strong>: Dynamically draw circles of varying sizes at the center of the screen based on the sound wave level of the music.<br>The code and comments for this experiment are as follows:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ddf.minim.*;  <span class="comment">// Importing the Minim audio library</span></span><br><span class="line"></span><br><span class="line">Minim minim;        <span class="comment">// Declaration of Minim object</span></span><br><span class="line">AudioPlayer music;  <span class="comment">// Declaration of AudioPlayer object</span></span><br><span class="line"><span class="type">float</span> voice;        <span class="comment">// Variable to store the audio level</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">setup</span><span class="params">()</span> &#123;</span><br><span class="line">  size(<span class="number">800</span>, <span class="number">800</span>);            <span class="comment">// Setting the size of the canvas</span></span><br><span class="line">  background(<span class="number">0</span>);             <span class="comment">// Setting the background color to black</span></span><br><span class="line">  minim = <span class="keyword">new</span> <span class="title class_">Minim</span>(<span class="built_in">this</span>);   <span class="comment">// Initializing the Minim object</span></span><br><span class="line">  music = minim.loadFile(<span class="string">&quot;music.mp3&quot;</span>, <span class="number">1024</span>);  <span class="comment">// Loading the music file</span></span><br><span class="line">  music.loop();              <span class="comment">// Playing the music file in a loop</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">draw</span><span class="params">()</span> &#123;</span><br><span class="line">  voice = music.mix.level();  <span class="comment">// Retrieving the audio level</span></span><br><span class="line">  <span class="comment">// Drawing an ellipse at the center of the canvas</span></span><br><span class="line">  <span class="comment">// The size of the ellipse is based on the audio level</span></span><br><span class="line">  ellipse(width / <span class="number">2</span>, height / <span class="number">2</span>, voice * <span class="number">400</span>, voice * <span class="number">400</span>); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<br>
+
+<hr>
+<h2 id="Achievement-Display"><a href="#Achievement-Display" class="headerlink" title="Achievement Display"></a>Achievement Display</h2><ul>
+<li><strong>Music Playback</strong>: The music file was successfully loaded and played in a loop.</li>
+<li><strong>Dynamic Visual Effect</strong>: The level of sound waves in the music affected the size of the circles, achieving a dynamic visual change.<br><img src="/2023zjude-NOBRAINNOPAIN/pj5/3.gif"></li>
+</ul>
+<br>
+
+<hr>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>Through this experiment, we successfully combined audio data with visual elements, creating a new form of artistic expression. This not only showcased the application of programming in artistic creation but also laid a foundation for further exploration of the interaction between music and visual arts.</p>
+<br>
+
+<hr>
+<h2 id="References"><a href="#References" class="headerlink" title="References:"></a>References:</h2><p><em><a target="_blank" rel="noopener" href="https://processing.org/examples">https://processing.org/examples</a></em><br><em><a target="_blank" rel="noopener" href="https://openprocessing.org/">https://openprocessing.org/</a></em><br><em><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Pa4y1x7bp">https://www.bilibili.com/video/BV1Pa4y1x7bp</a></em></p>
+
+</div> 
+
+<script>
+    window.onload = detectors();
+</script>
+    <div class="post-footer">
+    <div class="h-line-primary"></div>
+    <nav class="post-nav">
+        <div class="prev-item">
+           
+        </div>
+        <div class="next-item">
+            
+                <div class="icon arrow-right"></div>
+                <div class="post-link">
+                  <a href="/2023zjude-NOBRAINNOPAIN/2023/11/23/Product-Idea/">Next</a>  
+                </div>  
+            
+        </div>
+    </nav>
+</div>
+
+    
+      <div class="post-comment">
+
+     
+
+     
+    
+    
+
+</div>
+     
+  
+</article>
+        </div>
+      </div>
+      
+      <div class="footer">
+    <div class="flex-container">
+        <div class="footer-text">
+            
+            
+                Pan Jiangyu, Dong Yan, Zhou Yang, Jin Duola, Hou Liang | 
+            
+            
+                Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/zoeingwingkei/frame/">Frame</a>
+                
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    
+    
+
+  </body>
+</html>
