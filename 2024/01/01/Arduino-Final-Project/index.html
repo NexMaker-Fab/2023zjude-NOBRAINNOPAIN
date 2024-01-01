@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Lau">
+
+
+
+
+
+
+
+<title>Arduino - Final Project | Hexo</title>
+
+
+
+    <link rel="icon" href="/2023zjude-NOBRAINNOPAIN/favicon.ico">
+
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Roboto+Mono&display=swap');
+</style>
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/2023zjude-NOBRAINNOPAIN/css/style.css">
+    
+
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/2023zjude-NOBRAINNOPAIN/js/frame.js"></script>
+    
+
+
+
+
+
+
+
+
+
+
+  <meta name="generator" content="Hexo 6.3.0"></head>
+  <body>
+    <div class="mask-border">
+    </div>
+
+    <div class="wrapper">
+
+      <div class="header">
+  <div class="flex-container">
+    <div class="header-inner">
+      <div class="site-brand-container">
+        <a href="/2023zjude-NOBRAINNOPAIN/">
+          
+            NO BRAIN NO PAIN.
+          
+        </a>
+      </div>
+      <div id="menu-btn" class="menu-btn" onclick="toggleMenu()">
+        Menu
+      </div>
+      <nav class="site-nav">
+        <ul class="menu-list">
+          
+            
+              <li class="menu-item">
+                <a href="/2023zjude-NOBRAINNOPAIN/">Home</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/2023zjude-NOBRAINNOPAIN/categories/gallery/">Projects</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/2023zjude-NOBRAINNOPAIN/Final-Project/">Final Project</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/2023zjude-NOBRAINNOPAIN/About-Us/">About Us</a>
+              </li> 
+                   
+          
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main">
+        <div class="flex-container">
+          <article id="post">
+
+  
+    <div class="post-head">
+    <div class="post-info">
+        <div class="tag-list">
+            
+        </div>
+        <div class="post-title">
+            
+            
+                Arduino - Final Project
+            
+            
+        </div>
+        <span class="post-date">
+            Jan 1, 2024
+        </span>
+    </div>
+    <div class="post-img">
+        
+            <div class="h-line-primary"></div>
+              
+    </div>
+</div>
+    <div class="post-content">
+    <h2 id="Article-Catalog"><a href="#Article-Catalog" class="headerlink" title="Article Catalog"></a>Article Catalog</h2><ul>
+<li>Arduino Big Job Experiment (Original Version)</li>
+<li>Arduino Big Work Experiment (Advanced Version)</li>
+</ul>
+<br>
+
+<hr>
+<h2 id="Arduino-Big-Job-Experiment-Original-Version"><a href="#Arduino-Big-Job-Experiment-Original-Version" class="headerlink" title="Arduino Big Job Experiment (Original Version)"></a>Arduino Big Job Experiment (Original Version)</h2><h3 id="Color-sensor"><a href="#Color-sensor" class="headerlink" title="Color sensor"></a>Color sensor</h3><p>The color sensor is used to identify the painting disc for 1s at a time, and its rgb value corresponds to the corresponding musical style (for example, red is defined as the passionate musical style). Use the switch function to remove the music clip from the sd card. </p>
+<p>Code:</p>
+<p><strong>Read Color Functions</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">void <span class="function"><span class="title">readColor</span></span>() &#123;//从传感器获取数据 </span><br><span class="line"> //红色:</span><br><span class="line"> digitalWrite(S2, LOW);</span><br><span class="line"> digitalWrite(S3, LOW);</span><br><span class="line"> redFrequency = pulseIn(sensorOut, LOW); // 读取红色频率</span><br><span class="line"> redColor = map(redFrequency, redMin, redMax, 255, 0); // 映射红色值</span><br><span class="line"> Serial.println(redColor);</span><br><span class="line"> delay(100);</span><br><span class="line"> //绿色:</span><br><span class="line"> digitalWrite(S2, HIGH);</span><br><span class="line"> digitalWrite(S3, HIGH);</span><br><span class="line"> greenFrequency = pulseIn(sensorOut, LOW); // 读取绿色频率</span><br><span class="line"> greenColor = map(greenFrequency, greenMin, greenMax, 255, 0); // 映射绿色值</span><br><span class="line"> Serial.println(greenColor);</span><br><span class="line"> delay(100);</span><br><span class="line"> //蓝色:</span><br><span class="line"> digitalWrite(S2, LOW);</span><br><span class="line"> digitalWrite(S3, HIGH);</span><br><span class="line"> blueFrequency = pulseIn(sensorOut, LOW); // 读取蓝色频率</span><br><span class="line"> blueColor = map(blueFrequency, blueMin, blueMax, 255, 0); // 映射蓝色值</span><br><span class="line"> Serial.println(blueColor);</span><br><span class="line"> delay(100);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>The color corresponds to the melody function</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">void <span class="function"><span class="title">decideColor</span></span>() &#123;</span><br><span class="line">  // 格式化颜色值：</span><br><span class="line">  redColor = constrain(redColor, 0, 255);</span><br><span class="line">  greenColor = constrain(greenColor, 0, 255);</span><br><span class="line">  blueColor = constrain(blueColor, 0, 255);</span><br><span class="line"></span><br><span class="line">  // 判断颜色：</span><br><span class="line">  <span class="keyword">if</span> (redColor &gt; 250 &amp;&amp; greenColor &gt; 250 &amp;&amp; blueColor &gt; 250) &#123;</span><br><span class="line">    color = 1; // 白色</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (redColor &lt; 50 &amp;&amp; greenColor &lt; 50 &amp;&amp; blueColor &lt; 50) &#123;</span><br><span class="line">    color = 2; // 黑色</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (redColor &gt; 230 &amp;&amp; greenColor &gt; 200 &amp;&amp; blueColor &lt; 160) &#123;</span><br><span class="line">    color = 3; // 黄色</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (redColor &gt; 200 &amp;&amp; greenColor &lt; 120 &amp;&amp; blueColor &lt; 150) &#123;</span><br><span class="line">    color = 4; // 红色</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (redColor &gt; 175 &amp;&amp; greenColor &gt; 200 &amp;&amp; blueColor &gt; 175) &#123;</span><br><span class="line">    color = 5; // 绿色</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (redColor &gt; 155 &amp;&amp; greenColor &lt; 200 &amp;&amp; blueColor &lt; 200) &#123;</span><br><span class="line">    color = 6; // 蓝色</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    color = 0; // 未知</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Calibration Color Function</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">void <span class="function"><span class="title">calibrate</span></span>() &#123;</span><br><span class="line"> Serial.println(<span class="string">&quot;Calibrating...&quot;</span>); // 校准中...</span><br><span class="line"> Serial.println(<span class="string">&quot;White&quot;</span>); // 请将传感器对准白色物体</span><br><span class="line"> // 设置校准值:</span><br><span class="line"> digitalWrite(13, HIGH); // 点亮内置LED</span><br><span class="line"> delay(2000); // 延时</span><br><span class="line"> digitalWrite(S2, LOW);</span><br><span class="line"> digitalWrite(S3, LOW);</span><br><span class="line"> redMin = pulseIn(sensorOut, LOW); // 读取红色最小值</span><br><span class="line"> delay(100);</span><br><span class="line"> digitalWrite(S2, HIGH);</span><br><span class="line"> digitalWrite(S3, HIGH);</span><br><span class="line"> greenMin = pulseIn(sensorOut, LOW); // 读取绿色最小值</span><br><span class="line"> delay(100);</span><br><span class="line"> digitalWrite(S2, LOW);</span><br><span class="line"> digitalWrite(S3, HIGH);</span><br><span class="line"> blueMin = pulseIn(sensorOut, LOW); // 读取蓝色最小值</span><br><span class="line"> delay(100);</span><br><span class="line"> Serial.println(<span class="string">&quot;next...&quot;</span>); // 接下来，请对准黑色物体</span><br><span class="line"> digitalWrite(13, LOW);</span><br><span class="line"> delay(2000);</span><br><span class="line"> Serial.println(<span class="string">&quot;Black&quot;</span>); // 黑色校准</span><br><span class="line"> // 设置校准值:</span><br><span class="line"> digitalWrite(13, HIGH);</span><br><span class="line"> delay(2000);</span><br><span class="line"> digitalWrite(S2, LOW);</span><br><span class="line"> digitalWrite(S3, LOW);</span><br><span class="line"> redMax = pulseIn(sensorOut, LOW); // 读取红色最大值</span><br><span class="line"> delay(100);</span><br><span class="line"> digitalWrite(S2, HIGH);</span><br><span class="line"> digitalWrite(S3, HIGH);</span><br><span class="line"> greenMax = pulseIn(sensorOut, LOW); // 读取绿色最大值</span><br><span class="line"> delay(100);</span><br><span class="line"> digitalWrite(S2, LOW);</span><br><span class="line"> digitalWrite(S3, HIGH);</span><br><span class="line"> blueMax = pulseIn(sensorOut, LOW); // 读取蓝色最大值</span><br><span class="line"> delay(100);</span><br><span class="line"> Serial.println(<span class="string">&quot;Done calibrating.&quot;</span>); // 校准完成</span><br><span class="line"> digitalWrite(13, LOW); // 熄灭内置LED</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2023zjude-NOBRAINNOPAIN/pj3/fn/01.jpg"><br><img src="/2023zjude-NOBRAINNOPAIN/pj3/fn/02.jpg"></p>
+<h3 id="mp3-module"><a href="#mp3-module" class="headerlink" title="mp3 module"></a>mp3 module</h3><p>Store the music corresponding to different colors in the sd card, named 1,2,3,4,5,6. And use the switch statement to call the color in it. </p>
+<p>Code:</p>
+<p><strong>Play Music Functions</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">oid <span class="function"><span class="title">playMusic</span></span>() &#123;</span><br><span class="line">  // 根据颜色播放音乐</span><br><span class="line">  switch (color) &#123;</span><br><span class="line">    <span class="keyword">case</span> 1: // 白色</span><br><span class="line">      Serial.println(<span class="string">&quot;情绪：纯净&quot;</span>);</span><br><span class="line">      myDFPlayer.play(1); // whitesong</span><br><span class="line">      <span class="built_in">break</span>;</span><br><span class="line">    <span class="keyword">case</span> 2: // 黑色</span><br><span class="line">      Serial.println(<span class="string">&quot;情绪：沉默&quot;</span>);</span><br><span class="line">      myDFPlayer.play(2); // blacksong</span><br><span class="line">      <span class="built_in">break</span>;</span><br><span class="line">    <span class="keyword">case</span> 3: // 黄色</span><br><span class="line">      Serial.println(<span class="string">&quot;情绪：活力&quot;</span>);</span><br><span class="line">      myDFPlayer.play(3); // yellowsong</span><br><span class="line">      <span class="built_in">break</span>;</span><br><span class="line">    <span class="keyword">case</span> 4: // 红色</span><br><span class="line">      Serial.println(<span class="string">&quot;情绪：热情&quot;</span>);</span><br><span class="line">      myDFPlayer.play(4); // redsong</span><br><span class="line">      <span class="built_in">break</span>;</span><br><span class="line">    <span class="keyword">case</span> 5: // 绿色</span><br><span class="line">      Serial.println(<span class="string">&quot;情绪：愉悦&quot;</span>);</span><br><span class="line">      myDFPlayer.play(5); // greensong</span><br><span class="line">      <span class="built_in">break</span>;</span><br><span class="line">    <span class="keyword">case</span> 6: // 蓝色</span><br><span class="line">      Serial.println(<span class="string">&quot;情绪：平和&quot;</span>);</span><br><span class="line">      myDFPlayer.play(6); // bluesong</span><br><span class="line">      <span class="built_in">break</span>;</span><br><span class="line">    default:</span><br><span class="line">      Serial.println(<span class="string">&quot;未知颜色&quot;</span>);</span><br><span class="line">      <span class="built_in">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2023zjude-NOBRAINNOPAIN/pj3/fn/03.jpg"></p>
+<h3 id="Steering-gear-section"><a href="#Steering-gear-section" class="headerlink" title="Steering gear section"></a>Steering gear section</h3><p>The steering gear part uses a 180 degree SG90 motor and a 360 degree SG90 motor, and SG90180 controls the rotation of the rotor arm. The SG90 360 controls the painting to rotate in order to achieve color recognition of the entire disk<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/fn/04.jpg"></p>
+<h3 id="Vocal-part"><a href="#Vocal-part" class="headerlink" title="Vocal part"></a>Vocal part</h3><p>Use the buzzer</p>
+<p><strong>Integral code:</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;SoftwareSerial.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;DFRobotDFPlayerMini.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;Servo.h&gt; </span></span><br><span class="line"></span><br><span class="line">// Arduino引脚定义:</span><br><span class="line"><span class="comment">#define S0 2</span></span><br><span class="line"><span class="comment">#define S1 3</span></span><br><span class="line"><span class="comment">#define S2 4</span></span><br><span class="line"><span class="comment">#define S3 5</span></span><br><span class="line"><span class="comment">#define sensorOut 6</span></span><br><span class="line"><span class="comment">#define switchPin1 7</span></span><br><span class="line">Servo myservo;</span><br><span class="line">// 来自传感器的输出：</span><br><span class="line">int redFrequency = 0;</span><br><span class="line">int greenFrequency = 0;</span><br><span class="line">int blueFrequency = 0;</span><br><span class="line">// 格式化的颜色值：</span><br><span class="line">int redColor = 0;</span><br><span class="line">int greenColor = 0;</span><br><span class="line">int blueColor = 0;</span><br><span class="line">// 用于校准的值</span><br><span class="line">int redMin;</span><br><span class="line">int redMax;</span><br><span class="line">int greenMin;</span><br><span class="line">int greenMax;</span><br><span class="line">int blueMin;</span><br><span class="line">int blueMax;</span><br><span class="line">int color = 0;</span><br><span class="line"></span><br><span class="line">// DFPlayer Mini相关设置</span><br><span class="line">SoftwareSerial mySoftwareSerial(10, 11); // RX, TX</span><br><span class="line">DFRobotDFPlayerMini myDFPlayer;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">setup</span></span>() &#123;</span><br><span class="line">  // 初始化Arduino引脚</span><br><span class="line">  pinMode(switchPin1, INPUT_PULLUP);    </span><br><span class="line">  pinMode(S0, OUTPUT);</span><br><span class="line">  pinMode(S1, OUTPUT);</span><br><span class="line">  pinMode(S2, OUTPUT);</span><br><span class="line">  pinMode(S3, OUTPUT);</span><br><span class="line">myservo.attach(7);</span><br><span class="line">  pinMode(sensorOut, INPUT);</span><br><span class="line"></span><br><span class="line">  // 初始化DFPlayer Mini</span><br><span class="line">  mySoftwareSerial.begin(9600);</span><br><span class="line">  Serial.begin(9600);</span><br><span class="line">  <span class="keyword">if</span> (!myDFPlayer.begin(mySoftwareSerial)) &#123;</span><br><span class="line">    Serial.println(<span class="string">&quot;DFPlayer Mini 初始化失败！&quot;</span>);</span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  myDFPlayer.volume(30);  // 设置音量 (0~30)</span><br><span class="line"></span><br><span class="line">  // 将频率缩放设置为20%:</span><br><span class="line">  digitalWrite(S0, HIGH);</span><br><span class="line">  digitalWrite(S1, LOW);</span><br><span class="line">  calibrate(); // 校准传感器</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">loop</span></span>() &#123;</span><br><span class="line"></span><br><span class="line">myservo.write(0);</span><br><span class="line">delay(2000);</span><br><span class="line">myservo.write(90);</span><br><span class="line">delay(500);</span><br><span class="line">  readColor(); // 读取颜色</span><br><span class="line">  decideColor(); // 决定颜色和情绪</span><br><span class="line">  playMusic(); // 播放音乐</span><br><span class="line">  delay(1000); // 每秒检测一次</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">readColor</span></span>() &#123;//从传感器获取数据 </span><br><span class="line"> //红色:</span><br><span class="line"> digitalWrite(S2, LOW);</span><br><span class="line"> digitalWrite(S3, LOW);</span><br><span class="line"> redFrequency = pulseIn(sensorOut, LOW); // 读取红色频率</span><br><span class="line"> redColor = map(redFrequency, redMin, redMax, 255, 0); // 映射红色值</span><br><span class="line"> Serial.println(redColor);</span><br><span class="line"> delay(100);</span><br><span class="line"> //绿色:</span><br><span class="line"> digitalWrite(S2, HIGH);</span><br><span class="line"> digitalWrite(S3, HIGH);</span><br><span class="line"> greenFrequency = pulseIn(sensorOut, LOW); // 读取绿色频率</span><br><span class="line"> greenColor = map(greenFrequency, greenMin, greenMax, 255, 0); // 映射绿色值</span><br><span class="line"> Serial.println(greenColor);</span><br><span class="line"> delay(100);</span><br><span class="line"> //蓝色:</span><br><span class="line"> digitalWrite(S2, LOW);</span><br><span class="line"> digitalWrite(S3, HIGH);</span><br><span class="line"> blueFrequency = pulseIn(sensorOut, LOW); // 读取蓝色频率</span><br><span class="line"> blueColor = map(blueFrequency, blueMin, blueMax, 255, 0); // 映射蓝色值</span><br><span class="line"> Serial.println(blueColor);</span><br><span class="line"> delay(100);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">decideColor</span></span>() &#123;</span><br><span class="line">  // 格式化颜色值：</span><br><span class="line">  redColor = constrain(redColor, 0, 255);</span><br><span class="line">  greenColor = constrain(greenColor, 0, 255);</span><br><span class="line">  blueColor = constrain(blueColor, 0, 255);</span><br><span class="line"></span><br><span class="line">  // 判断颜色：</span><br><span class="line">  <span class="keyword">if</span> (redColor &gt; 250 &amp;&amp; greenColor &gt; 250 &amp;&amp; blueColor &gt; 250) &#123;</span><br><span class="line">    color = 1; // 白色</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (redColor &lt; 50 &amp;&amp; greenColor &lt; 50 &amp;&amp; blueColor &lt; 50) &#123;</span><br><span class="line">    color = 2; // 黑色</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (redColor &gt; 230 &amp;&amp; greenColor &gt; 200 &amp;&amp; blueColor &lt; 160) &#123;</span><br><span class="line">    color = 3; // 黄色</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (redColor &gt; 200 &amp;&amp; greenColor &lt; 120 &amp;&amp; blueColor &lt; 150) &#123;</span><br><span class="line">    color = 4; // 红色</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (redColor &gt; 175 &amp;&amp; greenColor &gt; 200 &amp;&amp; blueColor &gt; 175) &#123;</span><br><span class="line">    color = 5; // 绿色</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (redColor &gt; 155 &amp;&amp; greenColor &lt; 200 &amp;&amp; blueColor &lt; 200) &#123;</span><br><span class="line">    color = 6; // 蓝色</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    color = 0; // 未知</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">calibrate</span></span>() &#123;</span><br><span class="line"> Serial.println(<span class="string">&quot;Calibrating...&quot;</span>); // 校准中...</span><br><span class="line"> Serial.println(<span class="string">&quot;White&quot;</span>); // 请将传感器对准白色物体</span><br><span class="line"> // 设置校准值:</span><br><span class="line"> digitalWrite(13, HIGH); // 点亮内置LED</span><br><span class="line"> delay(2000); // 延时</span><br><span class="line"> digitalWrite(S2, LOW);</span><br><span class="line"> digitalWrite(S3, LOW);</span><br><span class="line"> redMin = pulseIn(sensorOut, LOW); // 读取红色最小值</span><br><span class="line"> delay(100);</span><br><span class="line"> digitalWrite(S2, HIGH);</span><br><span class="line"> digitalWrite(S3, HIGH);</span><br><span class="line"> greenMin = pulseIn(sensorOut, LOW); // 读取绿色最小值</span><br><span class="line"> delay(100);</span><br><span class="line"> digitalWrite(S2, LOW);</span><br><span class="line"> digitalWrite(S3, HIGH);</span><br><span class="line"> blueMin = pulseIn(sensorOut, LOW); // 读取蓝色最小值</span><br><span class="line"> delay(100);</span><br><span class="line"> Serial.println(<span class="string">&quot;next...&quot;</span>); // 接下来，请对准黑色物体</span><br><span class="line"> digitalWrite(13, LOW);</span><br><span class="line"> delay(2000);</span><br><span class="line"> Serial.println(<span class="string">&quot;Black&quot;</span>); // 黑色校准</span><br><span class="line"> // 设置校准值:</span><br><span class="line"> digitalWrite(13, HIGH);</span><br><span class="line"> delay(2000);</span><br><span class="line"> digitalWrite(S2, LOW);</span><br><span class="line"> digitalWrite(S3, LOW);</span><br><span class="line"> redMax = pulseIn(sensorOut, LOW); // 读取红色最大值</span><br><span class="line"> delay(100);</span><br><span class="line"> digitalWrite(S2, HIGH);</span><br><span class="line"> digitalWrite(S3, HIGH);</span><br><span class="line"> greenMax = pulseIn(sensorOut, LOW); // 读取绿色最大值</span><br><span class="line"> delay(100);</span><br><span class="line"> digitalWrite(S2, LOW);</span><br><span class="line"> digitalWrite(S3, HIGH);</span><br><span class="line"> blueMax = pulseIn(sensorOut, LOW); // 读取蓝色最大值</span><br><span class="line"> delay(100);</span><br><span class="line"> Serial.println(<span class="string">&quot;Done calibrating.&quot;</span>); // 校准完成</span><br><span class="line"> digitalWrite(13, LOW); // 熄灭内置LED</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void <span class="function"><span class="title">playMusic</span></span>() &#123;</span><br><span class="line">  // 根据颜色播放音乐</span><br><span class="line">  switch (color) &#123;</span><br><span class="line">    <span class="keyword">case</span> 1: // 白色</span><br><span class="line">      Serial.println(<span class="string">&quot;情绪：纯净&quot;</span>);</span><br><span class="line">      myDFPlayer.play(1); // whitesong</span><br><span class="line">      <span class="built_in">break</span>;</span><br><span class="line">    <span class="keyword">case</span> 2: // 黑色</span><br><span class="line">      Serial.println(<span class="string">&quot;情绪：沉默&quot;</span>);</span><br><span class="line">      myDFPlayer.play(2); // blacksong</span><br><span class="line">      <span class="built_in">break</span>;</span><br><span class="line">    <span class="keyword">case</span> 3: // 黄色</span><br><span class="line">      Serial.println(<span class="string">&quot;情绪：活力&quot;</span>);</span><br><span class="line">      myDFPlayer.play(3); // yellowsong</span><br><span class="line">      <span class="built_in">break</span>;</span><br><span class="line">    <span class="keyword">case</span> 4: // 红色</span><br><span class="line">      Serial.println(<span class="string">&quot;情绪：热情&quot;</span>);</span><br><span class="line">      myDFPlayer.play(4); // redsong</span><br><span class="line">      <span class="built_in">break</span>;</span><br><span class="line">    <span class="keyword">case</span> 5: // 绿色</span><br><span class="line">      Serial.println(<span class="string">&quot;情绪：愉悦&quot;</span>);</span><br><span class="line">      myDFPlayer.play(5); // greensong</span><br><span class="line">      <span class="built_in">break</span>;</span><br><span class="line">    <span class="keyword">case</span> 6: // 蓝色</span><br><span class="line">      Serial.println(<span class="string">&quot;情绪：平和&quot;</span>);</span><br><span class="line">      myDFPlayer.play(6); // bluesong</span><br><span class="line">      <span class="built_in">break</span>;</span><br><span class="line">    default:</span><br><span class="line">      Serial.println(<span class="string">&quot;未知颜色&quot;</span>);</span><br><span class="line">      <span class="built_in">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Wiring-diagram"><a href="#Wiring-diagram" class="headerlink" title="Wiring diagram"></a>Wiring diagram</h3><p><img src="/2023zjude-NOBRAINNOPAIN/pj3/fn/05.jpg"><br><img src="/2023zjude-NOBRAINNOPAIN/pj3/fn/06.png"><br><img src="/2023zjude-NOBRAINNOPAIN/pj3/fn/07.png"></p>
+<h3 id="Problems-encountered"><a href="#Problems-encountered" class="headerlink" title="Problems encountered:"></a>Problems encountered:</h3><ol>
+<li>The sound quality of the buzzer is not good </li>
+<li>360 degrees of the steering gear corresponds to the speed, and the rotation of the steering gear cannot be controlled at a constant speed. Even using a for loop can only increase and decrease its speed. </li>
+<li>No switch control, start to rotate when powered on. </li>
+<li>Poor experimental effect</li>
+</ol>
+<br>
+
+<hr>
+<h2 id="Arduino-Big-Work-Experiment-Advanced-Version"><a href="#Arduino-Big-Work-Experiment-Advanced-Version" class="headerlink" title="Arduino Big Work Experiment (Advanced Version)"></a>Arduino Big Work Experiment (Advanced Version)</h2><p>Improvement of the original effect: the color of the painting plate varies with the drawing of different people, and there is randomness. As a result, the melody of the song is confused and the listening feeling is not good. To this end, we decided to replace the song fragments that correspond to different colors with different sound effects (such as tapping, tapping, and drumming). It is applied to the beat of a relatively universal basic bgm, and the recognized delay number corresponds to the number of beats.</p>
+<p><strong>Dual Track Implementation</strong><br>Double track implementation Then use an mp3 module to store bgm. </p>
+<p><strong>Rudder Improvement</strong><br>Improvement of steering gear Replace the 360-degree steering with a stepper motor<br><img src="/2023zjude-NOBRAINNOPAIN/pj3/fn/08.jpg"></p>
+<p><strong>Switch addition</strong><br><img src="/2023zjude-NOBRAINNOPAIN/pj3/fn/09.jpg"></p>
+<p><strong>Buzzer replaced with power amplifier module</strong><br><img src="/2023zjude-NOBRAINNOPAIN/pj3/fn/10.jpg"></p>
+
+</div> 
+
+<script>
+    window.onload = detectors();
+</script>
+    <div class="post-footer">
+    <div class="h-line-primary"></div>
+    <nav class="post-nav">
+        <div class="prev-item">
+           
+        </div>
+        <div class="next-item">
+            
+                <div class="icon arrow-right"></div>
+                <div class="post-link">
+                  <a href="/2023zjude-NOBRAINNOPAIN/2024/01/01/Experiment-7-Arduino-IOT/">Next</a>  
+                </div>  
+            
+        </div>
+    </nav>
+</div>
+
+    
+      <div class="post-comment">
+
+     
+
+     
+    
+    
+
+</div>
+     
+  
+</article>
+        </div>
+      </div>
+      
+      <div class="footer">
+    <div class="flex-container">
+        <div class="footer-text">
+            
+            
+                Pan Jiangyu, Dong Yan, Zhou Yang, Jin Duola, Hou Liang | 
+            
+            
+                Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/zoeingwingkei/frame/">Frame</a>
+                
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    
+    
+
+  </body>
+</html>
